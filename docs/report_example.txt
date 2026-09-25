@@ -1,0 +1,8 @@
+Title       : [ Gray Visibility    (Boss)] for Illumination Laser Composed by I.C.KaZe
+FM voices   : 0, 1, 2, 4, 10, 11, 13, 14, 15, 80, 82, 83, 84, 85, 87, 100, 102, 103, 104, 105, 120
+OPM track   :      A      B      C      D      E      F      G      H
+Total steps :  13848  13824  13777  13778  13779  13776  13824  13824
+Loop steps  :  12288  12288  12288  12288  12288  12288  12288  12288
+PCM track   :      P      Q      R      S      T      U      V      W
+Total steps :      0      0      0      0      0      0      0      0
+Loop steps  :      -      -      -      -      -      -      -      -

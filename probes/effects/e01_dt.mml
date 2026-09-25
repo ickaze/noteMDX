@@ -1,0 +1,16 @@
+#title "e01_dt"
+@0={
+ 31,0,3,6,0,28,0,1,0,0,0,
+ 30,0,3,6,0,24,0,1,0,0,0,
+ 28,18,3,9,11,9,0,0,0,0,0,
+ 26,0,15,10,0,0,0,1,0,0,0,
+ 3,0,15
+}
+#wavemem
+@w0={1,1,0,7,-9,0}
+A @0 c4
+A DT0,3,0 c8&c8 r8 d8 DTOF e8 DTON f8
+A DT0,3,1 c8&c8 r8 d8 DTOF e8 DTON f8
+A DT0,3,2 c8&c8 r8 d8 DTOF e8 DTON f8
+A DT0,3,1 DTD2 c4 DTD-3 c4 DTD0 DTL5 c4 DTOF
+A DTS2 DTON c4 DTOF

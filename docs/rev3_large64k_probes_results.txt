@@ -1,0 +1,9 @@
+K00SAFE 56093 RAW MATCH 82841f66f707fb5c2b061f1c4f9904e63f6ca98de6e7570dfa807ab58acbe660
+K01TAIL 67488 RAW MATCH 7ca522217b7bf60384a48c568fd3087cbef0f035848428b305f766bc746e57d8
+K02PART REJECTED as in supplied NOTE log (diagnostic text/position may differ)
+K03SUM REJECTED as in supplied NOTE log (diagnostic text/position may differ)
+K04LOOP REJECTED as in supplied NOTE log (diagnostic text/position may differ)
+K05LOOP REJECTED as in supplied NOTE log (diagnostic text/position may differ)
+K06REPT REJECTED as in supplied NOTE log (diagnostic text/position may differ)
+K07ESC REJECTED as in supplied NOTE log (diagnostic text/position may differ)
+2 byte-exact original MDX matches; 6 original rejection outcomes confirmed; file-budget checks passed

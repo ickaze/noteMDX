@@ -1,0 +1,65 @@
+"""Exercise every documented NOTE switch plus restored combination syntax."""
+import pathlib,subprocess,sys,tempfile
+exe=str(pathlib.Path(sys.argv[1]).resolve())
+root=pathlib.Path(__file__).resolve().parent.parent
+checks=0
+with tempfile.TemporaryDirectory() as directory:
+    cwd=pathlib.Path(directory)
+    source=cwd/'song.mml';out=source.with_suffix('.mdx')
+    voice=(root/'examples/basic.mml').read_bytes().split(b'A ')[0]
+    def run(*args):return subprocess.run([exe,*map(str,args)],cwd=cwd,capture_output=True)
+    def check(test,label):
+        global checks
+        checks+=1;assert test,label
+    source.write_bytes(b'A c\nB d\n')
+    check(run('-iAb',source).returncode==0,'-i')
+    muted=out.read_bytes()
+    check(run('--mute','Ab',source).returncode==0 and out.read_bytes()==muted,'mute alias')
+    check(run('-x',source).returncode==0,'-x')
+    check(run('--reverse-octave',source).returncode==0,'reverse alias')
+    check(run('-p',source).returncode==0,'-p')
+    ex=out.read_bytes()
+    check(run('-xpb1',source).returncode==0 and out.read_bytes()==ex,'combined flags and -1/-b')
+    check(run('-m64',source).returncode==0,'-m64')
+    r=run('-m256',source)
+    check(r.returncode==0 and b'format guard' not in r.stderr,'-m256 accepted without obsolete warning')
+    check(run('-m0',source).returncode==2 and run('-m',source).returncode==2,'invalid buffer')
+    r=run('-v1',source);check(r.returncode==0 and b'Converting  : A' in r.stdout,'-v1 progress')
+    for v in ('-v','-v0'):
+        check(run(v,source).returncode==0,v)
+    check(run('-v2',source).returncode==2,'invalid verbose')
+    (cwd/'pcmuse.map').write_bytes(b'KEEP')
+    for flags in (['-l'],['-lo'],['-l','-o'],['-o']):
+        r=run(*flags,source)
+        check(r.returncode==0 and b'not implemented' in r.stderr and (cwd/'pcmuse.map').read_bytes()==b'KEEP','PCM map '+str(flags))
+    check(run('--output','arbitrary.bin',source).returncode==0 and (cwd/'arbitrary.bin').exists(),'--output')
+    check(run('-o','alias.mdx',source).returncode==0 and (cwd/'alias.mdx').exists(),'old output alias before input')
+    check(run(source,'-o','after.bin').returncode==0 and (cwd/'after.bin').exists(),'old output alias after input')
+    source.write_bytes(b'#save-tone "ignored-tone.bin"\n#save-wave "ignored-wave.bin"\nA c\n')
+    check(run('-t','-w',source).returncode==0 and (cwd/'tone.bin').stat().st_size==7168 and (cwd/'wave.bin').stat().st_size==131968 and not (cwd/'ignored-tone.bin').exists() and not (cwd/'ignored-wave.bin').exists(),'-t/-w defaults and priority')
+    check(run('-ttest-tone.bin','-wtest-wave.bin',source).returncode==0 and (cwd/'test-tone.bin').read_bytes()==(cwd/'tone.bin').read_bytes() and (cwd/'test-wave.bin').read_bytes()==(cwd/'wave.bin').read_bytes(),'-t/-w names')
+    source.write_bytes((root/'probes/remaining/g00_save.mml').read_bytes())
+    r=run('-toracle-tone.bin','-woracle-wave.bin',source)
+    check(r.returncode==0 and (cwd/'oracle-tone.bin').read_bytes()==(root/'tests/reference/g00_ton.bin').read_bytes() and (cwd/'oracle-wave.bin').read_bytes()==(root/'tests/reference/g00_wav.bin').read_bytes(),'-t/-w match original NOTE banks')
+    source.write_bytes(b'A r%1 r%2 c4&c4\n')
+    for short,long in [('-c',['--compress','rests']),('-cn',['--compress','notes']),('-z',['--opt','*']),('-zdvqpt012',['--opt','dvqpt012'])]:
+        check(run(short,source).returncode==0,short)
+        data=out.read_bytes();check(run(*long,source).returncode==0 and out.read_bytes()==data,short+' alias')
+    source.write_bytes(b'A '+b'c%1d%1'*300+b'\n')
+    check(run('-m1',source).returncode==1,'small buffer enforced')
+    source.write_bytes(b'A q9\nB q9\n');out.write_bytes(b'KEEP')
+    r=run('-v1','-1',source)
+    check(r.returncode==1 and r.stderr.count(b'error [')==1 and b' -> ' in r.stderr and out.read_bytes()==b'KEEP','-v1 source and first fatal error')
+    r=run('-br',source)
+    check(r.returncode==1 and not out.exists() and (sys.platform=='win32' or b'\a' in r.stderr),'-b/-r on error')
+    source.write_bytes(b'#wavemem\n@w0={0,0,1,2}\nA q9\n')
+    r=run('-e','-terr-tone.bin','-werr-wave.bin',source)
+    check(r.returncode==1 and not out.exists() and (cwd/'err-tone.bin').stat().st_size==7168 and (cwd/'err-wave.bin').read_bytes()[0]==255,'-e banks on error')
+    source.write_bytes(b'A q9\n')
+    check(run('-tno-error-save.bin',source).returncode==1 and not (cwd/'no-error-save.bin').exists(),'no bank on error without -e')
+    source.write_bytes(b'#include "song.mdx"\nA q9\n');out.write_bytes(b'A c\n')
+    r=run('-r',source)
+    check(r.returncode==2 and out.read_bytes()==b'A c\n','-r protects included input')
+    source.write_bytes(b'A c\n')
+    check(run('-tsong.mml',source).returncode==2 and source.read_bytes()==b'A c\n','bank output protects input')
+print(f'{checks} NOTE-switch compatibility checks passed')

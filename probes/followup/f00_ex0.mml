@@ -1,0 +1,5 @@
+#title "f00_ex0"
+#ex-pcm
+A r4
+P @0 F4 n0,4
+W @0 F4 n1,4

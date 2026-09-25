@@ -1,0 +1,129 @@
+[
+  {
+    "name": "BOSS1",
+    "args": [],
+    "expected_bytes": 16427,
+    "actual_bytes": 16427,
+    "exact": true,
+    "differences": [],
+    "source_sha256": "11c4c17e6d4321196c6f3cb22eaa9807d329d2a9a33adf7ae881ae08cf4afefc",
+    "reference_sha256": "7571f3aa0df30ab05a8f84852cc7ca6ed338e1e7352ed0db796e9f920a48baca",
+    "actual_sha256": "7571f3aa0df30ab05a8f84852cc7ca6ed338e1e7352ed0db796e9f920a48baca"
+  },
+  {
+    "name": "BOSS2",
+    "args": [],
+    "expected_bytes": 1045,
+    "actual_bytes": 1045,
+    "exact": true,
+    "differences": [],
+    "source_sha256": "ceceed176de82a9edac13c3537f4434cf6df2eb46a7716136eb10a2f2492ce0d",
+    "reference_sha256": "adefd60c64edcaa092742341c32880b6edd2262d22f8355edc6777eb4240e467",
+    "actual_sha256": "adefd60c64edcaa092742341c32880b6edd2262d22f8355edc6777eb4240e467"
+  },
+  {
+    "name": "BOSS7",
+    "args": [],
+    "expected_bytes": 8416,
+    "actual_bytes": 8416,
+    "exact": true,
+    "differences": [],
+    "source_sha256": "b1943e8711553f6aa60f6069e49f570fbb60b782d86fec9a6f2a6e408b3d5649",
+    "reference_sha256": "15a2d1872e0a70b1ba55a4379218b02f1a11f211384eb450a9e674d10de62c33",
+    "actual_sha256": "15a2d1872e0a70b1ba55a4379218b02f1a11f211384eb450a9e674d10de62c33"
+  },
+  {
+    "name": "RANKING",
+    "args": [],
+    "expected_bytes": 10174,
+    "actual_bytes": 10174,
+    "exact": true,
+    "differences": [],
+    "source_sha256": "767c595e11012406d5c0e4170635b3319f7664da4896b086b04a959a1e7bcd2d",
+    "reference_sha256": "f8dd434df5242bc6352eccd021d2b83c9576465d347c1a1103b057115961b198",
+    "actual_sha256": "f8dd434df5242bc6352eccd021d2b83c9576465d347c1a1103b057115961b198"
+  },
+  {
+    "name": "STAGE1",
+    "args": [],
+    "expected_bytes": 13365,
+    "actual_bytes": 13365,
+    "exact": true,
+    "differences": [],
+    "source_sha256": "30982bbdbeb3874cc5a7dd4d8239bc0ee08130a1974cad7cea954b0b6aa24471",
+    "reference_sha256": "124d3a5aa5f357c7e29e13bcc19cd7af303fe8ab8b305244cfc623a5929c0a89",
+    "actual_sha256": "124d3a5aa5f357c7e29e13bcc19cd7af303fe8ab8b305244cfc623a5929c0a89"
+  },
+  {
+    "name": "STAGE2",
+    "args": [],
+    "expected_bytes": 6523,
+    "actual_bytes": 6523,
+    "exact": true,
+    "differences": [],
+    "source_sha256": "9f520ec0cebc122ae105671adc3ce2d3f0203a2c477a953b49b3bb865da30b45",
+    "reference_sha256": "3043f68beb6ad4fb71c1574815361c79ad52c385e428b9d7c9b9d667f9bceabc",
+    "actual_sha256": "3043f68beb6ad4fb71c1574815361c79ad52c385e428b9d7c9b9d667f9bceabc"
+  },
+  {
+    "name": "STAGE3",
+    "args": [],
+    "expected_bytes": 2933,
+    "actual_bytes": 2933,
+    "exact": true,
+    "differences": [],
+    "source_sha256": "9ec2e8a379beb0a19b50bbb0c0ff83f5b04fff312eb01648ad9c754e9884e976",
+    "reference_sha256": "fc17b89e5136afe3de30198122d6a8b0421349f8143bb0544799e5b26d70d903",
+    "actual_sha256": "fc17b89e5136afe3de30198122d6a8b0421349f8143bb0544799e5b26d70d903"
+  },
+  {
+    "name": "STAGE4",
+    "args": [],
+    "expected_bytes": 15962,
+    "actual_bytes": 15962,
+    "exact": true,
+    "differences": [],
+    "source_sha256": "871c94915e125cd087fee804436d17a177f73e2a7223f0df5452b695f34192d7",
+    "reference_sha256": "499dd9cb8af6a43d8a89c0c353611daa2221d6462fdfb262496dd12c78357074",
+    "actual_sha256": "499dd9cb8af6a43d8a89c0c353611daa2221d6462fdfb262496dd12c78357074"
+  },
+  {
+    "name": "STAGE5",
+    "args": [
+      "-c",
+      "-z"
+    ],
+    "expected_bytes": 16180,
+    "actual_bytes": 16180,
+    "exact": true,
+    "differences": [],
+    "source_sha256": "4ec0e6248570e17b06a00c0fe650431224fb4cb6c33d4138239e4dc7485ff7cc",
+    "reference_sha256": "28abbcebbc4ccc907dc14a4fd7eb4a1a118ca9f1eda646133746dcb23aa4ce0e",
+    "actual_sha256": "28abbcebbc4ccc907dc14a4fd7eb4a1a118ca9f1eda646133746dcb23aa4ce0e"
+  },
+  {
+    "name": "STAGE6",
+    "args": [
+      "-c",
+      "-z"
+    ],
+    "expected_bytes": 28857,
+    "actual_bytes": 28857,
+    "exact": true,
+    "differences": [],
+    "source_sha256": "bc6378fea45867af7031379a772dc8df4e8dd24c2013ccb3b79d0572ac0e7547",
+    "reference_sha256": "8332c0be7c9e6937a3513d62dcf3aee7e4455f622efbe78e4919ff6cca6bfaaf",
+    "actual_sha256": "8332c0be7c9e6937a3513d62dcf3aee7e4455f622efbe78e4919ff6cca6bfaaf"
+  },
+  {
+    "name": "STAGE7",
+    "args": [],
+    "expected_bytes": 9228,
+    "actual_bytes": 9228,
+    "exact": true,
+    "differences": [],
+    "source_sha256": "92db32bc35821bb69223ce443bd25e52dc596eabf076209bb672423dce224417",
+    "reference_sha256": "546a2101b3fa28ea079e980120b4d4ab11b1f12a12ac5d36bad3e1326ee21a64",
+    "actual_sha256": "546a2101b3fa28ea079e980120b4d4ab11b1f12a12ac5d36bad3e1326ee21a64"
+  }
+]

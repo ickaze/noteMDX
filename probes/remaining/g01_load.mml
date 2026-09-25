@@ -1,0 +1,5 @@
+#title "g01_load"
+#load-tone "g00_ton.bin"
+#wavemem
+#load-wave "g00_wav.bin"
+A @17 AP0,1,1 c4 APOF @255 DT127,3,1 d4 DTOF

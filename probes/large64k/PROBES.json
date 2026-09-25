@@ -1,0 +1,246 @@
+[
+  {
+    "name": "K00SAFE",
+    "input_sha256": "f0504e952a02d57dd98ac07c8cdcf84d341526f7dfe224d7809a917b124c1055",
+    "input_bytes": 91312,
+    "maximum_line_bytes": 60,
+    "note_arguments": [
+      "-m256",
+      "-v1",
+      "-1",
+      "K00SAFE.MML"
+    ],
+    "conventional_layout_prediction": {
+      "file_bytes": 56093,
+      "voice_offset": 56040,
+      "track_offsets": [
+        20,
+        56024,
+        56026,
+        56028,
+        56030,
+        56032,
+        56034,
+        56036,
+        56038
+      ],
+      "voice_bytes": 27
+    },
+    "actual_note_output": "success",
+    "reference_log_sha256": "54352d71faf7e1587b388c697e7e769cc39969dcdfede08025738a4dab189c90",
+    "reference_bytes": 56093,
+    "reference_sha256": "82841f66f707fb5c2b061f1c4f9904e63f6ca98de6e7570dfa807ab58acbe660"
+  },
+  {
+    "name": "K01TAIL",
+    "input_sha256": "4cc4c236a5e70f1910c3d6356019ec79476d36ee618d89b33377ceee2f866c64",
+    "input_bytes": 130615,
+    "maximum_line_bytes": 60,
+    "note_arguments": [
+      "-m256",
+      "-v1",
+      "-1",
+      "K01TAIL.MML"
+    ],
+    "conventional_layout_prediction": {
+      "file_bytes": 67488,
+      "voice_offset": 60550,
+      "track_offsets": [
+        20,
+        60534,
+        60536,
+        60538,
+        60540,
+        60542,
+        60544,
+        60546,
+        60548
+      ],
+      "voice_bytes": 6912
+    },
+    "actual_note_output": "success",
+    "reference_log_sha256": "8b80a1319f07158fe3dd71b504a0f3b1a2734b4deac39ce9ae5b67ef94260369",
+    "reference_bytes": 67488,
+    "reference_sha256": "7ca522217b7bf60384a48c568fd3087cbef0f035848428b305f766bc746e57d8"
+  },
+  {
+    "name": "K02PART",
+    "input_sha256": "06c9ff069964c7f7e58e63b6f7ead2eea630325d57aa2fc178b734d8eb941174",
+    "input_bytes": 114064,
+    "maximum_line_bytes": 60,
+    "note_arguments": [
+      "-m256",
+      "-v1",
+      "-1",
+      "K02PART.MML"
+    ],
+    "conventional_layout_prediction": {
+      "file_bytes": 70093,
+      "voice_offset": 70040,
+      "track_offsets": [
+        20,
+        70024,
+        70026,
+        70028,
+        70030,
+        70032,
+        70034,
+        70036,
+        70038
+      ],
+      "voice_bytes": 27
+    },
+    "actual_note_output": "rejected (see supplied log)",
+    "reference_log_sha256": "a28cd3e2806df20ced30dcf3b8c01ba257887ec0f0630f91d091cae6eaae4b1c"
+  },
+  {
+    "name": "K03SUM",
+    "input_sha256": "5547089f48c745f1ac092f0f5e2bc408fc2334ecfa980fcd8e782c01a86a1582",
+    "input_bytes": 156328,
+    "maximum_line_bytes": 60,
+    "note_arguments": [
+      "-m256",
+      "-v1",
+      "-1",
+      "K03SUM.MML"
+    ],
+    "conventional_layout_prediction": {
+      "file_bytes": 96098,
+      "voice_offset": 96046,
+      "track_offsets": [
+        20,
+        24024,
+        48028,
+        72032,
+        96036,
+        96038,
+        96040,
+        96042,
+        96044
+      ],
+      "voice_bytes": 27
+    },
+    "actual_note_output": "rejected (see supplied log)",
+    "reference_log_sha256": "a7df91216373dd43f4b7c85f198f82b31f41f649cdbc1d1ff54312a0e754fc74"
+  },
+  {
+    "name": "K04LOOP",
+    "input_sha256": "1074717a66bc79d16acf6bb47ec920caebde20991831ad5df46adabd76dbf98d",
+    "input_bytes": 58817,
+    "maximum_line_bytes": 60,
+    "note_arguments": [
+      "-m256",
+      "-v1",
+      "-1",
+      "K04LOOP.MML"
+    ],
+    "conventional_layout_prediction": {
+      "file_bytes": 36094,
+      "voice_offset": 36041,
+      "track_offsets": [
+        20,
+        36025,
+        36027,
+        36029,
+        36031,
+        36033,
+        36035,
+        36037,
+        36039
+      ],
+      "voice_bytes": 27
+    },
+    "actual_note_output": "rejected (see supplied log)",
+    "reference_log_sha256": "58416a0490c0432c1c1a311361cc16ddc6a7f261e6e1cb15bbf668e96903815d"
+  },
+  {
+    "name": "K05LOOP",
+    "input_sha256": "f47924a7a1744f019c19d2c73a31f156b3886150e5f8556add7adc9e8bc81c84",
+    "input_bytes": 114069,
+    "maximum_line_bytes": 60,
+    "note_arguments": [
+      "-m256",
+      "-v1",
+      "-1",
+      "K05LOOP.MML"
+    ],
+    "conventional_layout_prediction": {
+      "file_bytes": 70094,
+      "voice_offset": 70041,
+      "track_offsets": [
+        20,
+        70025,
+        70027,
+        70029,
+        70031,
+        70033,
+        70035,
+        70037,
+        70039
+      ],
+      "voice_bytes": 27
+    },
+    "actual_note_output": "rejected (see supplied log)",
+    "reference_log_sha256": "f2cca858adf0bf14c8f10dcf3fe8c7dd7420a9a5b86195db5f09ee81f8a9821f"
+  },
+  {
+    "name": "K06REPT",
+    "input_sha256": "ff9887ed6e99683b77bdfce21345499ff4a5f4fca56bffab9eb55e0bbe24cffb",
+    "input_bytes": 58823,
+    "maximum_line_bytes": 60,
+    "note_arguments": [
+      "-m256",
+      "-v1",
+      "-1",
+      "K06REPT.MML"
+    ],
+    "conventional_layout_prediction": {
+      "file_bytes": 36099,
+      "voice_offset": 36046,
+      "track_offsets": [
+        20,
+        36030,
+        36032,
+        36034,
+        36036,
+        36038,
+        36040,
+        36042,
+        36044
+      ],
+      "voice_bytes": 27
+    },
+    "actual_note_output": "rejected (see supplied log)",
+    "reference_log_sha256": "8c259b4822a79dde8664cdad10d32c00a6ffa6b28840aac317c9a08d0709c9a2"
+  },
+  {
+    "name": "K07ESC",
+    "input_sha256": "1d146d05125500526a64ff9de352c877146dde025987589c57dc074e4747596a",
+    "input_bytes": 59154,
+    "maximum_line_bytes": 60,
+    "note_arguments": [
+      "-m256",
+      "-v1",
+      "-1",
+      "K07ESC.MML"
+    ],
+    "conventional_layout_prediction": {
+      "file_bytes": 36301,
+      "voice_offset": 36249,
+      "track_offsets": [
+        20,
+        36233,
+        36235,
+        36237,
+        36239,
+        36241,
+        36243,
+        36245,
+        36247
+      ],
+      "voice_bytes": 27
+    },
+    "actual_note_output": "rejected (see supplied log)",
+    "reference_log_sha256": "13bbafdb07ba3bdf9ebdcaeaa76c44630c1d869f809e7072d58e93614f00c4cf"
+  }
+]

@@ -1,0 +1,16 @@
+#title "e04_mv"
+@0={
+ 31,0,3,6,0,28,0,1,0,0,0,
+ 30,0,3,6,0,24,0,1,0,0,0,
+ 28,18,3,9,11,9,0,0,0,0,0,
+ 26,0,15,10,0,0,0,1,0,0,0,
+ 3,0,15
+}
+#wavemem
+@w0={1,1,0,-2,1,0}
+A @0 c4
+A MV0,3,0 c8&c8 r8 d8 MVOF e8 MVON f8
+A MV0,3,1 c8&c8 r8 d8 MVOF e8 MVON f8
+A MV0,3,2 c8&c8 r8 d8 MVOF e8 MVON f8
+A MV0,3,1 MVD2 c4 MVD-3 c4 MVD0 MVL5 c4 MVOF
+A MVS2 MVON c4 MVOF

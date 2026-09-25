@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>notemdx.exe 0.8 — 日本語説明書</title><style>
+:root{color-scheme:light;--ink:#172b3d;--muted:#526775;--line:#d6e0e6;--accent:#086b85;--paper:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:1rem}body{margin:0;background:#edf2f5;color:var(--ink);font:16px/1.8 system-ui,"Yu Gothic",Meiryo,sans-serif}main{max-width:1140px;margin:auto;background:var(--paper);padding:44px 56px 80px}header{border-top:5px solid var(--accent);padding:18px 0 24px;border-bottom:1px solid var(--line)}h1{font-size:2.2rem;line-height:1.3;margin:.3em 0}h2{margin:3em 0 1em;border-bottom:2px solid var(--line);padding-bottom:.3em;font-size:1.55rem}h3{margin:2em 0 .6em;font-size:1.15rem}a{color:var(--accent);text-underline-offset:3px}p{margin:1em 0}nav{background:#f0f7f9;border:1px solid var(--line);padding:22px;margin-top:26px}nav ol{columns:2;column-gap:32px;margin:0;padding-left:24px}nav li{break-inside:avoid;margin:.3em 0}nav h2{margin:0 0 12px;border:0;font-size:1.1rem}.badge{font-size:.8rem;letter-spacing:.12em;color:var(--accent);font-weight:700}.languages{font-size:.9rem;margin:12px 0}.table-scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.94rem;margin:1.2em 0}th,td{border:1px solid var(--line);padding:10px 13px;text-align:left;vertical-align:top}th{background:#eaf2f5}tbody tr:nth-child(even){background:#f8fafb}code{font-family:Consolas,"Cascadia Mono",monospace;background:#edf3f5;padding:.1em .25em;border-radius:3px}pre{background:#f5f8fa;border-left:3px solid #adc9d3;padding:18px;overflow-x:auto;font:14px/1.8 Consolas,"Yu Gothic",Meiryo,monospace;tab-size:4}pre code{background:none;padding:0}.original{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.85 system-ui,"Yu Gothic",Meiryo,sans-serif}.notice{background:#eef8f3;border-left:4px solid #368966;padding:16px 20px}.back{display:block;text-align:right;font-size:.85rem;margin-top:18px}details{border:1px solid var(--line);padding:12px 18px;margin:1em 0}summary{cursor:pointer;font-weight:600}.command-index{display:flex;gap:8px;flex-wrap:wrap}.command-index a{font:13px Consolas,monospace;padding:3px 7px;background:#edf3f5}.top{position:fixed;right:18px;bottom:18px;background:var(--accent);color:white;padding:8px 14px;border-radius:4px;text-decoration:none}@media(max-width:700px){main{padding:24px 18px 70px}h1{font-size:1.7rem}nav ol{columns:1}th,td{padding:8px}pre{padding:12px;font-size:12px}.original{font-size:14px}}@media print{body{background:white}main{max-width:none;padding:0}nav ol{columns:2}.top,.back{display:none}pre{white-space:pre-wrap}h2,h3{break-after:avoid}table{font-size:10pt}a{color:inherit}}
+</style></head><body><main id="top"><header><div class="badge">NOTEMDX · VERSION 0.8 · REVISION 3 · DOCS 1 · 2026-09-26</div><h1>notemdx.exe 0.8 — 日本語説明書</h1><div class="languages"><a href="manual_ja.html" lang="ja">日本語</a> · <a href="manual_en.html" lang="en">English</a> · <a href="../note.doc">note.doc</a> · <a href="COMPATIBILITY.md">COMPATIBILITY.md</a> · <a href="API.md">API</a></div></header><nav aria-label="Index"><h2>目次 / Index</h2><ol><li><a href="#about">この説明書について</a></li><li><a href="#usage">使用方法と原版スイッチの対応</a></li><li><a href="#report">変換結果の表示</a></li><li><a href="#ref1">○ 識別子</a></li><li><a href="#ref2">○ mml</a></li><li><a href="#ref3">○ 疑似命令</a></li><li><a href="#ref4">○ 音符</a></li><li><a href="#ref5">○ 音長（補足）</a></li><li><a href="#ref6">○ 音色定義</a></li><li><a href="#ref7">○ マクロ定義</a></li><li><a href="#ref8">○ 音色マクロ定義</a></li><li><a href="#ref9">○ 波形エフェクト</a></li><li><a href="#ref10">○ 波形メモリ定義</a></li><li><a href="#ref11">○ 音色番号マップ定義</a></li><li><a href="#ref12">○ チャンネル別指定</a></li><li><a href="#ref13">○ コード入力</a></li><li><a href="#ref14">○ 文字列</a></li><li><a href="#ref15">○ $FLAT/$SHARP/$NATURAL、#flat/#sharp/#natural</a></li><li><a href="#ref16">○ グライド</a></li><li><a href="#ref17">○ 相対ボリューム</a></li><li><a href="#ref18">○ ポルタメント</a></li><li><a href="#ref19">○ TL（波形エフェクト）</a></li><li><a href="#limits">現在の制限と検証範囲</a></li><li><a href="#origin">作成根拠・補助資料</a></li></ol></nav><section><h2 id="about">この説明書について</h2><p>notemdx.exe 0.8 は、X68000のMXDRV2用MDXを生成するMMLコンバータです。note.docの技術説明を、索引付きで整理しました。現在の仕様との差は各項の補足を優先してください。原版全文は同梱のnote.doc（CP932テキスト）で確認できます。</p><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="usage">使用方法と原版スイッチの対応</h2><h2 id="s1">現在の使い方</h2>
+<pre><code>notemdx.exe [options] input.mml
+notemdx.exe -c -z STAGE5.mus
+notemdx.exe --encoding utf8 --output song.mdx song.mus</code></pre>
+<p>拡張子省略時は.mml、.musの順に探します。出力省略時は入力名の拡張子を.mdxに変更します。原版同様、引数なしのスイッチは-xprのように併記できます。-i、-z、-t、-wの文字列引数は、そのスイッチ以降の文字列を引数として読み取ります。</p>
+<div class="table-scroll"><table><thead><tr><th>オプション</th><th>内容</th></tr></thead><tbody><tr><td><code>--output FILE</code></td><td>MDXの出力先。旧版の-o FILEも判別可能な場合は受け付けます。引数なし-oは原版のPCMマップ指定です。</td></tr><tr><td><code>--encoding auto / utf8 / cp932</code></td><td>既定autoはBOM付きUTF-8、それ以外はCP932。includeにも適用。</td></tr><tr><td><code>-x</code> / <code>--reverse-octave</code></td><td>&lt;と&gt;の初期方向を反転。</td></tr><tr><td><code>-p</code> / <code>--ex-pcm</code></td><td>PCMをP〜Wの8トラックに拡張。</td></tr><tr><td><code>-iCHANNELS</code> / <code>--mute CHANNELS</code></td><td>変換しないトラック。例-iABPQ。小文字可。</td></tr><tr><td><code>-c</code> / <code>--compress rests</code></td><td>休符の圧縮。</td></tr><tr><td><code>-cn</code> / <code>--compress notes</code></td><td>休符と、タイで連続した同音程の圧縮。</td></tr><tr><td><code>--compress none</code></td><td>圧縮を無効化。</td></tr><tr><td><code>-z</code> / <code>--opt &quot;*&quot;</code></td><td>全項目の最適化。</td></tr><tr><td><code>-zSELECTORS</code> / <code>--opt SELECTORS</code></td><td>dvqpt012から選択。--opt noneで無効化。</td></tr><tr><td><code>--help</code> / <code>--version</code></td><td>ヘルプ／版表示。</td></tr></tbody></table></div>
+<p>圧縮・最適化は既定では無効です。CLIまたはAPIで明示した設定は、MMLの#compress/#optに優先します。終了コードは成功0、変換エラー1、引数・入出力エラー2です。通常の変換エラーでは既存MDXを維持します。-r指定時は旧MDXを削除し、-e指定時は登録済みバンクを保存します。タイトルとPDX名はCP932に保存し、表現できない文字はエラーです。</p>
+<h2 id="s2">原版スイッチとの対応</h2>
+<div class="table-scroll"><table><thead><tr><th>原版のスイッチ</th><th>現在の対応</th></tr></thead><tbody><tr><td><code>-mSIZE</code></td><td>ファイル全体の上限をKiB単位で指定。1〜65536、既定64。-m256で67,488バイトの元MDXと一致。トラック・音色開始位置の16bit制限は別途検査。</td></tr><tr><td><code>-x</code> / <code>-p</code></td><td>オクターブ方向反転／EX-PCM。対応済み。</td></tr><tr><td><code>-iCHANNELS</code></td><td>原版形式を復元。--mute CHANNELSは別名として維持。</td></tr><tr><td><code>-r</code></td><td>変換エラー時に既存MDXを削除。入力・include・読込バンクと同じファイルは削除しません。</td></tr><tr><td><code>-b</code></td><td>変換エラー時にビープ。WindowsはBeep、他環境は端末BEL。可聴かどうかは環境によります。</td></tr><tr><td><code>-l</code> / 引数なし<code>-o</code></td><td>認識して未対応警告。pcmuse.mapの生成／読込／論理和は行いません。-o単独では-lが必要なことも表示。</td></tr><tr><td><code>-c[n]</code> / <code>-z[dvqpt012]</code></td><td>圧縮／最適化。対応済み。</td></tr><tr><td><code>-t[name]</code> / <code>-w[name]</code></td><td>音色／波形バンクを保存。省略時tone.bin／wave.bin。CLI指定は#save-tone/#save-waveに優先。相対名は実行カレント基準。</td></tr><tr><td><code>-v</code> / <code>-v0</code></td><td>変換中トラックを表示。エラー行は対応端末で位置以降を赤色表示し、非対応端末・リダイレクトではASCII矢印。</td></tr><tr><td><code>-v1</code></td><td>変換中トラックとエラー行を表示し、位置の直前にASCIIの -&gt; を挿入。</td></tr><tr><td><code>-1</code></td><td>最初の致命的エラーで中止。現実装は指定なしでも最初の致命的エラーで中止。</td></tr><tr><td><code>-e</code></td><td>エラー時にも要求された音色／波形バンクを保存。不完全なMDXは保存しません。最初のエラーまでの登録内容であり、エラー後の解析継続は未対応。</td></tr></tbody></table></div>
+<p>-t/-wのファイル名はスイッチに続けて書きます（例-wcustom.bin）。別引数に分ける形式ではありません。-oの曖昧さを避け、MDX出力先には--outputを使用してください。互換用-o FILEは、入力指定後、次の名前が.mdx/.MDXの場合、または出力名・入力名が連続する場合に受け付けます。原版のPCM指定は-loの併記が明確です。</p>
+<p>#remove/#beep/#verは引き続き警告して無視します。上記のCLIスイッチを指定してください。#playは実行しません。各スイッチの検査結果と対応限界はCLI_COMPATIBILITY.mdに記録しています。</p><details><summary>原版使用方法の説明（対応表を優先）</summary><p>以下は原版仕様の記録です。未対応スイッチは上表を参照してください。</p><pre class="original">notemdx.exe 0.8 [switch] &lt;mml file[.mml|.mus]&gt;
+
+		読み込みファイル名は、拡張子を省略した場合、
+		～.mml の方が優先されます。
+
+	switch:
+
+	　　-m&lt;buffer size&gt;	書き出し mdx ファイル用バッファサイズ指定
+				単位は Kbytes で、既定値は 64 Kbytes です。
+
+	　　-x			オクターブ上下コマンド &lt; , &gt; の上下を反転
+				#octave-rev を指定したのと同じです。
+
+	　　-p			ex-pcm モード指定
+				#ex-pcm を指定したのと同じです。
+
+	　　-r			エラーが発生した時に、mdx ファイルを削除
+				#remove を指定したのと同じです。
+
+	    -i&lt;channel&gt;		チャンネル・マスク
+				コンバートしないチャンネルを指定します。
+				具体的には、A ～ H、P ～ W を指定しますが、
+				小文字でも構いません。
+
+	　　-b			エラーが発生していた場合、コンバート終了後に
+				ビープ音を鳴らす
+				#beep を指定したのと同じです。
+
+	　　-l			pcm 使用状況ファイル(pcmuse.map)を出力
+
+	　　-o			以前の pcmuse.map と新しい pcmuse.map とで
+				論理和をとる（-l スイッチ指定が必要）
+
+	　　-c[n]		音長を圧縮する
+				繋げられる休符（音符）について、音長の
+				圧縮を行ないます。既定では休符のみ圧縮しますが、
+				-cn とした場合は、音符も対象とします。
+				ただし、音符の場合はクオンタイズのかかり具合いが
+				変化する場合があるので、注意が必要です。
+				また、圧縮は条件によってはうまくいかない場合があります。
+				連符中や波形エフェクト中、&#x27;_&#x27; の付いた音符、
+				グライド加工中などは、圧縮は行なわれません。
+
+	　　-z[dvqpt012]	最適化
+				D v @v q @q p @ MD MP MA コマンドについて、不要と思われる
+				コマンドの削除及び移動を行ないます。
+				引数無しの場合は、上記コマンド全てが最適化の
+				対象となりますが、d(D), v(v @v),q(q @q), p, t(@)
+				0(MD) 1(MP) 2(MA) を引数として指定することにより、
+				最適化対象コマンドを指定することが可能です。
+
+	　　-t[name]		音色データ（バイナリ）をセーブ
+				コンバート完了時点での、音色の登録状況及び
+				音色データを指定のファイル名でセーブします。
+				ファイル名を省略した場合は、カレントに
+				tone.bin というファイルが作成されます。
+
+	　　-w[name]		波形データ（バイナリ）をセーブ
+				コンバート完了時点での、波形の登録状況及び
+				波形データを指定のファイル名でセーブします。
+				ファイル名を省略した場合は、カレントに
+				wave.bin というファイルが作成されます。
+
+	　　-v[0|1]		バーボーズ・モード
+				コンバート進行状況及びエラー箇所を、ある程度
+				判別出来るようにします。
+				引数無し、もしくは 0 を指定した場合は、
+				エラー発生箇所以降の色を変更して表示します。
+				1 を指定した場合は、エラー箇所の直前に &#x27;→&#x27; を
+				表示します。
+
+	　　-1			１回目のエラー発生で、コンバートを中止する
+
+	　　-e			エラーを無視してファイルを書き出す
+				コンバートエラーが発生していても
+				-t -w -l スイッチによるファイル書き出しを
+				行うようにします。
+
+
+	引数を持たないスイッチについては、-xpr などといった併記が可能です。</pre></details><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="report">変換結果の表示</h2><p>変換成功時、曲名、FM使用音色番号、使用中のPCMバンクごとの使用番号、OPM A〜H・PCM P〜Wの総ステップ数とL/Cからのステップ数を、桁を揃えた英語ラベルで表示します。曲名・ファイル名自体は原文を保持します。</p><p>FMはMDXに収録する選択音色を、範囲に省略せず個別に列挙します。PCMは発音するバンク内番号0〜95です。FM・PCMとも未使用番号は表示しません。音符のないバンクは表示しません。PDX内のサンプルの存在を調べる機能ではありません。</p><p>1ステップは四分音符の1/48。有限ループ・入れ子・最終回の/を反映します。Lは初回の終端までを総数として数え、L/Cから終端までをループ数とします。Cは最初に実行される位置を採用し、到達しないCはループ点なしです。ループ点なしは「-」、未使用・無効・ミュートトラックは0です。Wの同期待ちは含めません。ゲートで発音を短縮しても経過ステップ数は変わりません。64bit超過はoverflowと表示します。</p><p>PCMのL反復でバンクが持ち越される場合も使用番号に含めます。項目名の幅はTotal stepsの11文字に揃え、半角空白1つの後に:を置きます。PCM番号の連続範囲のみ0-3のように省略表示します。PCMバンク名はPCM bank0〜PCM bank255です。同じ情報はResult::statisticsから取得できます。</p><pre><code>Title       : [ Gray Visibility    (Boss)] for Illumination Laser Composed by I.C.KaZe
+FM voices   : 0, 1, 2, 4, 10, 11, 13, 14, 15, 80, 82, 83, 84, 85, 87, 100, 102, 103, 104, 105, 120
+OPM track   :      A      B      C      D      E      F      G      H
+Total steps :  13848  13824  13777  13778  13779  13776  13824  13824
+Loop steps  :  12288  12288  12288  12288  12288  12288  12288  12288
+PCM track   :      P      Q      R      S      T      U      V      W
+Total steps :      0      0      0      0      0      0      0      0
+Loop steps  :      -      -      -      -      -      -      -      -
+</code></pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref1">○ 識別子</h2><div class="notice">通常行の先頭がスペース・タブ等の無効な文字なら、その行全体がコメントです。複数行にまたがる定義の継続行は例外です。演奏行中は、有効な命令・マクロではない大文字から行末までコメントになります。引数や$・#で始まる構文はそれぞれの文法で解析します。</div><pre class="original">各行の先頭１文字は、特殊な場合を除いて、その行の識別子と
+みなされます。識別子の種類は、
+
+	A ～ H		opm パートの mml 行
+	P ～ W		pcm パートの mml 行
+	#文字列		疑似命令（文字列の内容により動作が異なる）
+	@番号		音色定義
+	@w番号		波形定義
+	@k番号		音色番号マップ定義
+	@@番号		音色マクロ定義
+	マクロ変数名	マクロ定義
+
+となっています。
+
+mml 行の識別子に限り、連続して複数記述した場合は、
+記述したチャンネル全てに、同じ内容の mml が定義されて
+いるとみなされます。
+
+	例）	ABC c4 d4 e4
+		→ A.ch B.ch C.ch に「c4 d4 e4」
+
+ただし、同一識別子を複数書いても、１つの場合と
+同じになります。
+
+	例）	AAA ceg
+		→　A ceg と同じ</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref2">○ mml</h2><div class="notice">現在の制限：有限ループ内のL、連符の入れ子・波形効果・ループ関連命令、音色マクロ内のL/Cは使用できません。?内のLもエラーです。一部の定義・疑似命令をまたぐタイは未対応です。Cは実際のループを作らず、最初の通過位置からの集計に使用します。Cをまたぐ音長圧縮は行いません。</div><pre class="original"></pre><details><summary>コマンド索引</summary><div class="command-index"><a href="#ref2-c1">mml 行でのコマンドは以下のとおりです。</a><a href="#ref2-c3">※[] 内は省略可能、&lt;&gt; 内は省略不可</a><a href="#ref2-c5">a～g</a><a href="#ref2-c7">n&lt;音程番号&gt;[,音長]</a><a href="#ref2-c9">r[音長]</a><a href="#ref2-c11">{}[音長]</a><a href="#ref2-c13">&amp;</a><a href="#ref2-c15">_[o|&lt;|&gt;]&lt;音程&gt;[音長]</a><a href="#ref2-c17">_D&lt;数値&gt;</a><a href="#ref2-c19">|～[:～[:～..]]|</a><a href="#ref2-c21">｢｣[音長]</a><a href="#ref2-c23">``[音長]</a><a href="#ref2-c25">#[音長]</a><a href="#ref2-c27">[]回数</a><a href="#ref2-c29">/</a><a href="#ref2-c31">L</a><a href="#ref2-c33">C</a><a href="#ref2-c35">t&lt;テンポ&gt;</a><a href="#ref2-c37">@t&lt;テンポ&gt;</a><a href="#ref2-c39">@&lt;音色番号&gt;</a><a href="#ref2-c41">@&lt;バンク番号&gt;</a><a href="#ref2-c43">SMON</a><a href="#ref2-c45">SMOF</a><a href="#ref2-c47">KS&lt;マップ番号&gt;</a><a href="#ref2-c49">KSON</a><a href="#ref2-c51">KSOF</a><a href="#ref2-c53">o&lt;オクターブ&gt;</a><a href="#ref2-c55">&lt;</a><a href="#ref2-c57">&gt;</a><a href="#ref2-c59">TR&lt;数値&gt;</a><a href="#ref2-c61">$FLAT{音符}</a><a href="#ref2-c63">$SHARP{音符}</a><a href="#ref2-c65">$NORMAL{音符}</a><a href="#ref2-c67">$NATURAL{音符}</a><a href="#ref2-c69">D&lt;数値&gt;</a><a href="#ref2-c71">l&lt;音長&gt;</a><a href="#ref2-c73">q&lt;割合&gt;</a><a href="#ref2-c75">@q&lt;ステップ&gt;</a><a href="#ref2-c77">Q&lt;割合&gt;</a><a href="#ref2-c79">k&lt;ステップ&gt;</a><a href="#ref2-c81">v&lt;音量&gt;</a><a href="#ref2-c83">@v&lt;音量&gt;</a><a href="#ref2-c85">x&lt;音量&gt;</a><a href="#ref2-c87">@x&lt;音量&gt;</a><a href="#ref2-c89">(数値</a><a href="#ref2-c91">)数値</a><a href="#ref2-c93">V&lt;数値&gt;</a><a href="#ref2-c95">VO&lt;数値&gt;</a><a href="#ref2-c97">p&lt;数値&gt;</a><a href="#ref2-c99">y&lt;レジスタ番号&gt;,&lt;値&gt;</a><a href="#ref2-c101">w[数値]</a><a href="#ref2-c103">S&lt;チャンネル&gt;</a><a href="#ref2-c105">W</a><a href="#ref2-c107">K</a><a href="#ref2-c109">F&lt;数値&gt;</a><a href="#ref2-c111">MH%1,%2,%3,%4,%5,%6,%7</a><a href="#ref2-c113">MHOF</a><a href="#ref2-c115">MHON</a><a href="#ref2-c117">MHR</a><a href="#ref2-c119">MP%1,%2,%3</a><a href="#ref2-c121">MPOF</a><a href="#ref2-c123">MPON</a><a href="#ref2-c125">MA%1,%2,%3</a><a href="#ref2-c127">MAOF</a><a href="#ref2-c129">MAON</a><a href="#ref2-c131">MD&lt;ステップ数&gt;</a><a href="#ref2-c133">GL&lt;数値&gt;,&lt;ステップ&gt;</a><a href="#ref2-c135">GLOF</a><a href="#ref2-c137">GLON</a><a href="#ref2-c139">AP%1,%2,%3</a><a href="#ref2-c141">APD&lt;ステップ数&gt;</a><a href="#ref2-c143">APL&lt;ステップ数&gt;</a><a href="#ref2-c145">APON</a><a href="#ref2-c147">APOF</a><a href="#ref2-c149">DT%1,%2,%3</a><a href="#ref2-c151">DTD&lt;ステップ数&gt;</a><a href="#ref2-c153">DTS&lt;数値&gt;</a><a href="#ref2-c155">DTL&lt;ステップ数&gt;</a><a href="#ref2-c157">DTON</a><a href="#ref2-c159">DTOF</a><a href="#ref2-c161">TD%1,%2,%3</a><a href="#ref2-c163">VM%1,%2,%3</a><a href="#ref2-c165">VMD&lt;ステップ数&gt;</a><a href="#ref2-c167">VMS&lt;数値&gt;</a><a href="#ref2-c169">VML&lt;ステップ数&gt;</a><a href="#ref2-c171">VMON</a><a href="#ref2-c173">VMOF</a><a href="#ref2-c175">MV%1,%2,%3</a><a href="#ref2-c177">KM%1,%2,%3</a><a href="#ref2-c179">KMD&lt;ステップ数&gt;</a><a href="#ref2-c181">KML&lt;ステップ数&gt;</a><a href="#ref2-c183">KMON</a><a href="#ref2-c185">KMOF</a><a href="#ref2-c187">TL%1,%2,%3</a><a href="#ref2-c189">TLD&lt;ステップ数&gt;</a><a href="#ref2-c191">TLM&lt;マスク値&gt;</a><a href="#ref2-c193">TLT&lt;音色番号&gt;</a><a href="#ref2-c195">TLL&lt;ステップ数&gt;</a><a href="#ref2-c197">TLON</a><a href="#ref2-c199">TLOF</a><a href="#ref2-c201">YA%1,%2,%3</a><a href="#ref2-c203">YAD&lt;ステップ数&gt;</a><a href="#ref2-c205">YAL&lt;ステップ数&gt;</a><a href="#ref2-c207">YAON</a><a href="#ref2-c209">YAOF</a><a href="#ref2-c211">$FO&lt;数値&gt;</a><a href="#ref2-c213">zc&lt;数値&gt;</a><a href="#ref2-c215">zw&lt;数値&gt;</a><a href="#ref2-c217">$&lt;マクロ変数名&gt;</a><a href="#ref2-c219">!</a><a href="#ref2-c221">?</a><a href="#ref2-c223">//  /*  *  ;</a></div></details><h3 id="ref2-c1">mml 行でのコマンドは以下のとおりです。</h3><pre class="original"></pre><h3 id="ref2-c3">※[] 内は省略可能、&lt;&gt; 内は省略不可</h3><pre class="original"></pre><h3 id="ref2-c5">a～g			音符、詳細は後述</h3><pre class="original"></pre><h3 id="ref2-c7">n&lt;音程番号&gt;[,音長]	音符（音程番号表記）</h3><pre class="original">音程番号範囲は -24(o-2d+) ～ 119(o10d)</pre><h3 id="ref2-c9">r[音長]			休符</h3><pre class="original"></pre><h3 id="ref2-c11">{}[音長]		連符</h3><pre class="original">指定した音長を{}内の音符の数で等分し、{}内の音符に
+割り振ります。{} 内の音符・休符の最大数は３２個です。
+この時に限り、%256 より長い音長が指定可能。
+{}内ではループ関連のコマンド、及び、波形エフェクト、
+グライド、ポルタメント後の音長指定が使用出来ません。</pre><h3 id="ref2-c13">&amp;			タイ</h3><pre class="original">前後の音符を繋げます。
+音符・休符の直後でのみ使用可能。
+前後関係が正しければ、行頭に表記しても構いませんが、
+波形エフェクト中のみ、行頭に &amp; が来た場合、無視
+されます。</pre><h3 id="ref2-c15">_[o|&lt;|&gt;]&lt;音程&gt;[音長]	ポルタメント</h3><pre class="original">音符の直後に指定します。
+直前の音符の音長で、指定した音程まで、
+直線的に音程を変化させます。
+音程の前には、o &lt; &gt; のみ表記出来ます。
+ここで指定した音長が、直前の音符の音長より
+短い場合は、直前の音長が採用されます。
+長い場合は、直前の音長で音程を変化させた後、
+残りの音長の間、最終音程を維持します。
+波形エフェクト中に使用した場合、波形エフェクトが
+一旦中断されます。</pre><h3 id="ref2-c17">_D&lt;数値&gt;		ポルタメント</h3><pre class="original">音符の直後に指定します。
+直前の音符の音長で、指定した数値の分だけ
+直線的に音程を変化させます。
+数値の単位は、半音の 1/64 で、設定範囲は
+-6144 ～ 6144 です。
+波形エフェクト中に使用した場合、波形エフェクトが
+一旦中断されます。</pre><h3 id="ref2-c19">|～[:～[:～..]]|	チャンネル別指定</h3><pre class="original">各チャンネル別に mml を割り振ります。
+チャンネル識別子を複数書いた場合に有効です。
+詳細は後述。</pre><h3 id="ref2-c21">｢｣[音長]		コード入力</h3><pre class="original"></pre><h3 id="ref2-c23">``[音長]		｢｣ 内の音符・休符を、各チャンネルに別々に</h3><pre class="original">割り振ります。詳細は、後述。</pre><h3 id="ref2-c25">#[音長]			コード入力</h3><pre class="original">以前に使用したコードを、そのまま使用します。
+これ以前にコードが使用されていない場合は、
+空になります。</pre><h3 id="ref2-c27">[]回数			ループ</h3><pre class="original">[] 間を指定回数だけ繰り返します。
+ループ回数は省略可（省略時は２）。</pre><h3 id="ref2-c29">/			ループ最後の回に、これ以降の内容を無視します。</h3><pre class="original">[] 中でのみ使用可能。</pre><h3 id="ref2-c31">L			無限ループポイント指定</h3><pre class="original">無限ループの始点を指定します。
+C と同時には使用できません。</pre><h3 id="ref2-c33">C			疑似ループポイント指定</h3><pre class="original">疑似的に、マーク位置から終端までを
+無限ループ範囲として、ステップ数を
+カウントします。実際にはループしません。
+L と同時には使用できません。</pre><h3 id="ref2-c35">t&lt;テンポ&gt;		テンポ（１分間に演奏する４分音符の数）設定</h3><pre class="original">設定範囲は、19 ～ 4882</pre><h3 id="ref2-c37">@t&lt;テンポ&gt;		テンポ（opm timer-B の値）設定</h3><pre class="original">設定範囲は、0 ～ 255</pre><h3 id="ref2-c39">@&lt;音色番号&gt;		音色設定（opm パート）</h3><pre class="original">音色番号範囲は、0 ～ 255
+初期値は不定</pre><h3 id="ref2-c41">@&lt;バンク番号&gt;		pcm バンク設定（pcm パート）</h3><pre class="original">バンク番号範囲は、0 ～ 255
+初期値は @0</pre><h3 id="ref2-c43">SMON			音色マクロ有効（デフォルト）</h3><pre class="original">音色マクロ定義内容を有効にします。</pre><h3 id="ref2-c45">SMOF			音色マクロ無効</h3><pre class="original">音色マクロ定義内容を無効にします。</pre><h3 id="ref2-c47">KS&lt;マップ番号&gt;		音程による音色自動切り替え</h3><pre class="original">指定した音色番号マップに従って、音色を
+自動的に変更するモードにします。
+この機能で定義された音色では、音色マクロの
+展開は行なわれません。また、この機能が
+有効な区間では、強制的に&#x27;@&#x27;コマンドの
+最適化が行なわれます。
+音色番号マップの定義方法は後述。
+マップ番号範囲は、0 ～ 7 です。</pre><h3 id="ref2-c49">KSON			音色自動切り替え再開</h3><pre class="original"></pre><h3 id="ref2-c51">KSOF			音色自動切り替え停止</h3><pre class="original"></pre><h3 id="ref2-c53">o&lt;オクターブ&gt;		オクターブ設定</h3><pre class="original">オクターブ範囲は、-2 ～ 10
+初期値は o4</pre><h3 id="ref2-c55">&lt;			オクターブを１下げます</h3><pre class="original"></pre><h3 id="ref2-c57">&gt;			オクターブを１上げます</h3><pre class="original"></pre><h3 id="ref2-c59">TR&lt;数値&gt;		各チャンネル別トランスポーズ</h3><pre class="original">出力される音程（キーコード）に補正を加えます。
+設定範囲は、-48 ～ 48 です。
+pcm パートで指定した場合も、作用します。
+また、#tps での補正も加味されます。
+初期値は TR0</pre><h3 id="ref2-c61">$FLAT{音符}		フラット指定</h3><pre class="original">音符 cdefgab のうち、常にフラットを付ける音符を
+指定します。</pre><h3 id="ref2-c63">$SHARP{音符}		シャープ指定</h3><pre class="original">音符 cdefgab のうち、常にシャープを付ける音符を
+指定します。</pre><h3 id="ref2-c65">$NORMAL{音符}		フラット・シャープ指定解除</h3><pre class="original"></pre><h3 id="ref2-c67">$NATURAL{音符}		$FLAT/$SHARP 指定を解除する音符を指定します。</h3><pre class="original">特に、{音符}指定を省略した場合は、全ての
+音符が解除対象になります。</pre><h3 id="ref2-c69">D&lt;数値&gt;			ディチューン設定</h3><pre class="original">音程を半音の 1/64 単位でずらします。
+設定範囲は、-32768 ～ 32767
+初期値は D0</pre><h3 id="ref2-c71">l&lt;音長&gt;			基本音長設定</h3><pre class="original">初期値は l4</pre><h3 id="ref2-c73">q&lt;割合&gt;			クオンタイズ指定</h3><pre class="original">全音長のうち８分の何だけ発音するかを決めます。
+設定範囲は、1 ～ 8
+初期値は q8</pre><h3 id="ref2-c75">@q&lt;ステップ&gt;		クオンタイズ指定</h3><pre class="original">全音長より指定したステップ数分だけ、
+キーオフを早めます。
+特に 0 を指定した場合は、q8 となります。
+設定範囲は、0 ～ 192
+
+q @q は、後に指定した方の設定が有効となります。</pre><h3 id="ref2-c77">Q&lt;割合&gt;			波形エフェクト中のクオンタイズ指定</h3><pre class="original">波形エフェクト中のみ有効なクオンタイズ指定です。
+
+       0: q/@q による制御に戻す
+  1～256: 全音長の 1/256 単位のクオンタイズ
+-256～-1: 絶対値を、実際に発音するステップ数とする
+　全音長が絶対値以下の場合は、全音長が
+　実際に発音する音長になる</pre><h3 id="ref2-c79">k&lt;ステップ&gt;		キーオンディレイ</h3><pre class="original">ステップ数分だけ、キーオンを遅らせます。
+設定範囲は、0 ～ 255
+初期値は k0</pre><h3 id="ref2-c81">v&lt;音量&gt;			音量設定（16 段階）</h3><pre class="original">音量範囲は、0 ～ 15
+初期値は v8</pre><h3 id="ref2-c83">@v&lt;音量&gt;		音量設定（128 段階）</h3><pre class="original">音量範囲は、0 ～ 127
+
+v @v は、後に指定した方の設定が有効となります。</pre><h3 id="ref2-c85">x&lt;音量&gt;			音量設定（16 段階）</h3><pre class="original">直後の１音符の音量を設定します。２音符目以降は、
+元の音量に戻ります。
+音量範囲は、0 ～ 15</pre><h3 id="ref2-c87">@x&lt;音量&gt;		音量設定（128 段階）</h3><pre class="original">直後の１音符の音量を設定します。２音符目以降は、
+元の音量に戻ります。
+音量範囲は、0 ～ 127</pre><h3 id="ref2-c89">(数値			音量を数値分下げます</h3><pre class="original">数値は省略可能。</pre><h3 id="ref2-c91">)数値			音量を数値分上げます</h3><pre class="original">数値は省略可能。</pre><h3 id="ref2-c93">V&lt;数値&gt;			音量を数値分変化させます</h3><pre class="original">( ) 同様、相対ボリューム指定ですが、
+現在の値に数値を足して、v もしくは @v を
+書き込みます。ただし、( ) による音量の変化は
+考慮されません。音量は自動的にクリッピング
+されるので、音量範囲オーバーなどのエラーが
+発生することはありません。</pre><h3 id="ref2-c95">VO&lt;数値&gt;		音量コマンド用オフセット</h3><pre class="original">v @v x @x に対するオフセットを指定します。
+設定範囲は -127 ～ 127
+初期値は VO0</pre><h3 id="ref2-c97">p&lt;数値&gt;			パンポット設定</h3><pre class="original">0: カット
+1: 左
+2: 右
+3: 左右（中央）
+初期値は p3</pre><h3 id="ref2-c99">y&lt;レジスタ番号&gt;,&lt;値&gt;	opm レジスタ書き込み</h3><pre class="original">opm のレジスタに直接値を書き込みます。
+レジスタ番号、値とも設定範囲は、0 ～ 255
+レジスタ番号、値には、16 進数及び 2 進数が
+使用でき、それぞれ $&lt;数値&gt;、%&lt;数値&gt; により
+指定可能です。レジスタ番号については、
+桁数に制限はありませんが、値については、
+16 進数の場合、最高 2 桁。2 進数の場合、
+最高 8 桁まで認識します。
+特に 2 進数の場合、%11_000_101 のような
+表記が可能です。</pre><h3 id="ref2-c101">w[数値]			ノイズ</h3><pre class="original">opm のノイズ周波数を設定します。
+設定範囲は、0 ～ 31
+数値省略時は、ノイズを止めます。</pre><h3 id="ref2-c103">S&lt;チャンネル&gt;		同期信号送出</h3><pre class="original">指定したチャンネルに同期信号を送ります。
+設定範囲は、0 ～ 15 もしくは、A ～ H、P ～ W</pre><h3 id="ref2-c105">W			同期信号待ち</h3><pre class="original">同期信号が来るまで演奏を停止します。</pre><h3 id="ref2-c107">K			残響カット</h3><pre class="original">opm パートにおいて、即時に残響を
+カットします。</pre><h3 id="ref2-c109">F&lt;数値&gt;			サンプリング周波数設定</h3><pre class="original">pcm パートのサンプリング周波数を設定します。
+
+0:  3.9 KHz
+1:  5.2 KHz
+2:  7.8 KHz
+3: 10.4 KHz
+4: 15.6 KHz
+
+初期値は F4
+
+特に数値が 5 ～ 6 の場合、
+
+5: 16bit pcm / 15.6 KHz
+6:  8bit pcm / 15.6 KHz
+
+となります。ただし、演奏時に pcm8 v0.46 以上が
+組み込まれている必要があります。
+
+また、pcm8++ 用に、7 ～ 31 の値も設定出来ます。</pre><h3 id="ref2-c111">MH%1,%2,%3,%4,%5,%6,%7	opm ハードウェア LFO 設定</h3><pre class="original">（このコマンド自体、MHON も兼ねています。）
+
+%1: LFO 波形番号
+　　0 = 鋸歯状波
+　　1 = 矩形波
+　　2 = 三角波
+　　3 = サンプル＆ホールド（ランダム）
+
+%2: LFO FREQUENCY（LFO 周波数）
+　　設定範囲は、0 ～ 255
+
+%3: LFO PITCH MODULATION DEPTH
+　　LFO 音程最大振幅を設定
+　　設定範囲は、0 ～ 127
+
+%4: LFO AMPLITUDE MODULATION DEPTH
+　　LFO 音量最大振幅を設定
+　　設定範囲は、0 ～ 127
+
+%5: LFO PITCH MODULATION SENSITIVITY
+　　%3: LFO-PMD の感度を設定します。
+　　設定範囲は、0 ～ 7
+
+%6: LFO AMPLITUDE MODULATION SENSITIVITY
+　　%4: LFO-AMD の感度を設定します。
+　　設定範囲は、0 ～ 3
+
+%7: LFO SYNCHRONIZE
+　　LFO 波形の位相を、キーオンに同期して
+　　リセットするかしないかを設定します。
+
+　　0 = 非同期（リセットしない）
+　　1 = 同期（キーオン毎にリセット）</pre><h3 id="ref2-c113">MHOF			opm ハードウェア LFO を 停止する</h3><pre class="original"></pre><h3 id="ref2-c115">MHON			opm ハードウェア LFO を 再開する</h3><pre class="original"></pre><h3 id="ref2-c117">MHR			opm ハードウェア LFO 位相リセット</h3><pre class="original">ハードウェア LFO の位相を、強制的に
+リセットします。</pre><h3 id="ref2-c119">MP%1,%2,%3		ソフトウェア音程 LFO 設定</h3><pre class="original">（このコマンド自体、MPON も兼ねています。）
+
+%1: LFO 波形番号
+　　0 = 鋸歯状波
+　　1 = 矩形波
+　　2 = 三角波
+　　3 = ランダム
+
+　　特に、波形番号に 4 を足すと、音程振幅が
+　　256 倍になります。
+
+%2: LFO 1/4 周期のステップ数
+　　LFO 波形の 1/4 周期に要する
+　　ステップ数を設定します。
+
+%3: LFO 最大振幅
+　　LFO 音程最大振幅を設定します。
+　　単位は、半音の 1/64（= D1）</pre><h3 id="ref2-c121">MPOF			ソフトウェア音程 LFO を停止する</h3><pre class="original"></pre><h3 id="ref2-c123">MPON			ソフトウェア音程 LFO を再開する</h3><pre class="original"></pre><h3 id="ref2-c125">MA%1,%2,%3		ソフトウェア音量 LFO 設定</h3><pre class="original">（このコマンド自体、MAON も兼ねています。）
+
+%1: LFO 波形番号
+　　0 = 鋸歯状波
+　　1 = 矩形波
+　　2 = 三角波
+　　3 = ランダム
+
+%2: LFO 1/4 周期のステップ数
+　　LFO 波形の 1/4 周期に要する
+　　ステップ数を設定します。
+
+%3: LFO 最大振幅
+　　LFO 音量最大振幅を設定します。
+　　単位は、@v1</pre><h3 id="ref2-c127">MAOF			ソフトウェア音量 LFO を停止する</h3><pre class="original"></pre><h3 id="ref2-c129">MAON			ソフトウェア音量 LFO を再開する</h3><pre class="original"></pre><h3 id="ref2-c131">MD&lt;ステップ数&gt;		ソフトウェア LFO ディレイ設定</h3><pre class="original">ソフトウェア LFO の開始を、キーオンから
+指定のステップ数だけ遅らせます。
+0 を指定した場合、キーオンと LFO 開始は
+同期しません。</pre><h3 id="ref2-c133">GL&lt;数値&gt;,&lt;ステップ&gt;	グライド</h3><pre class="original">（このコマンド自体、GLON も兼ねています。）
+音符の先頭部分を加工します。
+音符の音長のうち、先頭から指定したステップ数分だけ
+指定した数値から０まで直線的に音程が変化し、
+残りの音長は元々の音程を維持します。
+数値の単位は、半音の 1/64 で、設定範囲は
+-6144 ～ 6144 です。ステップ数の設定範囲は、
+1 ～ 255 です。
+pcm パートおよび、連符中、ポルタメント付き
+音符には作用しません。また、音程番号表記を
+用いた場合も作用しません。
+グライド加工中は、波形エフェクトが中断されます。</pre><h3 id="ref2-c135">GLOF			グライド加工を停止する</h3><pre class="original"></pre><h3 id="ref2-c137">GLON			グライド加工を再開する</h3><pre class="original"></pre><h3 id="ref2-c139">AP%1,%2,%3		オートパン（波形メモリを使用）</h3><pre class="original">%1: 波形番号
+%2: １要素のステップ数・音符数
+%3: 0 = 非同期１
+    1 = 同期
+    2 = 非同期２
+
+pcm パートでは、音符の途中でのパンの変更は無効です。</pre><h3 id="ref2-c141">APD&lt;ステップ数&gt;		ディレイ</h3><pre class="original">オートパンがかかり始めるまでのディレイ値を
+設定します。
+設定範囲は -255 ～ 32767 で、初期値は 0 です。</pre><h3 id="ref2-c143">APL&lt;ステップ数&gt;		ステップ数・音符数変更</h3><pre class="original">状態を保持したまま、波形１要素のステップ数や
+音符数を変更します。現在カウント中のステップの
+終了後に値が更新されるので、効果を発揮するまでに
+少し時間がかかる場合があります。</pre><h3 id="ref2-c145">APON			オートパン再開</h3><pre class="original"></pre><h3 id="ref2-c147">APOF			オートパン停止</h3><pre class="original"></pre><h3 id="ref2-c149">DT%1,%2,%3		ディチューン（波形メモリを使用）</h3><pre class="original">%1: 波形番号
+%2: １要素のステップ数・音符数
+%3: 0 = 非同期１
+    1 = 同期
+    2 = 非同期２
+
+現在の D の値にデータが加算されます。</pre><h3 id="ref2-c151">DTD&lt;ステップ数&gt;		ディレイ</h3><pre class="original">波形メモリによるディチューンがかかり始めるまでの
+ディレイ値を設定します。
+設定範囲は -255 ～ 32767 で、初期値は 0 です。</pre><h3 id="ref2-c153">DTS&lt;数値&gt;		ディチューン倍率</h3><pre class="original">ディチューンデータの倍率を設定します。
+0 は、1 を指定したのと同じになります。
+あまり大きな値を指定するとオーバーフローを起こすので
+注意して下さい。
+初期値は 0</pre><h3 id="ref2-c155">DTL&lt;ステップ数&gt;		ステップ数・音符数変更</h3><pre class="original">状態を保持したまま、波形１要素のステップ数や
+音符数を変更します。現在カウント中のステップの
+終了後に値が更新されるので、効果を発揮するまでに
+少し時間がかかる場合があります。</pre><h3 id="ref2-c157">DTON			ディチューン再開</h3><pre class="original"></pre><h3 id="ref2-c159">DTOF			ディチューン停止</h3><pre class="original"></pre><h3 id="ref2-c161">TD%1,%2,%3		ディチューン２（波形メモリを使用）</h3><pre class="original">名称が &#x27;DT*&#x27; -&gt; &#x27;TD*&#x27; になったもので、その他の
+関連命令も、&#x27;TD*&#x27; で同様に使用出来ます。
+&#x27;DT*&#x27; との同時使用も可能ですが、その場合は
+コマンドの書き出しに無駄が多くでますので、
+なるべく -z スイッチを指定するようにして下さい。</pre><h3 id="ref2-c163">VM%1,%2,%3		音量（波形メモリを使用）</h3><pre class="original">最後に使用された音量コマンドにより、
+v 相対と @v 相対に動作が変わります。
+
+%1: 波形番号
+%2: １要素のステップ数・音符数
+%3: 0 = 非同期１
+    1 = 同期
+    2 = 非同期２</pre><h3 id="ref2-c165">VMD&lt;ステップ数&gt;		ディレイ</h3><pre class="original">波形メモリによる音量変化がかかり始めるまでの
+ディレイ値を設定します。
+設定範囲は -255 ～ 32767 で、初期値は 0 です。</pre><h3 id="ref2-c167">VMS&lt;数値&gt;		音量変化倍率</h3><pre class="original">音量変化データの倍率を設定します。
+0 は、1 を指定したのと同じになります。
+あまり大きな値を指定するとオーバーフローを起こすので
+注意して下さい。
+初期値は 0</pre><h3 id="ref2-c169">VML&lt;ステップ数&gt;		ステップ数・音符数変更</h3><pre class="original">状態を保持したまま、波形１要素のステップ数や
+音符数を変更します。現在カウント中のステップの
+終了後に値が更新されるので、効果を発揮するまでに
+少し時間がかかる場合があります。</pre><h3 id="ref2-c171">VMON			音量再開</h3><pre class="original"></pre><h3 id="ref2-c173">VMOF			音量停止</h3><pre class="original"></pre><h3 id="ref2-c175">MV%1,%2,%3		音量２（波形メモリを使用）</h3><pre class="original">名称が &#x27;VM*&#x27; -&gt; &#x27;MV*&#x27; になったもので、その他の
+関連命令も、&#x27;MV*&#x27; で同様に使用出来ます。
+&#x27;VM*&#x27; との同時使用も可能ですが、その場合は
+コマンドの書き出しに無駄が多くでますので、
+なるべく -z スイッチを指定するようにして下さい。</pre><h3 id="ref2-c177">KM%1,%2,%3		PMS/AMS（波形メモリを使用）</h3><pre class="original">PMS/AMS を同時に変化させます。
+OPM レジスタ($38～$3F)に書き込む値を指定するので注意。
+事前に MH の設定で、PMD/AMD が設定されていないと
+意味がありません。
+
+%1: 波形番号
+%2: １要素のステップ数・音符数
+%3: 0 = 非同期１
+    1 = 同期
+    2 = 非同期２</pre><h3 id="ref2-c179">KMD&lt;ステップ数&gt;		ディレイ</h3><pre class="original">波形メモリによる PMS/AMS 変化がかかり始めるまでの
+ディレイ値を設定します。
+設定範囲は -255 ～ 32767 で、初期値は 0 です。</pre><h3 id="ref2-c181">KML&lt;ステップ数&gt;		ステップ数・音符数変更</h3><pre class="original">状態を保持したまま、波形１要素のステップ数や
+音符数を変更します。現在カウント中のステップの
+終了後に値が更新されるので、効果を発揮するまでに
+少し時間がかかる場合があります。</pre><h3 id="ref2-c183">KMON			PMS/AMS 再開</h3><pre class="original"></pre><h3 id="ref2-c185">KMOF			PMS/AMS 停止</h3><pre class="original"></pre><h3 id="ref2-c187">TL%1,%2,%3		トータルレベル（波形メモリを使用）</h3><pre class="original">指定オペレータのトータルレベル値を変化させます。
+非常に特殊なエフェクトで、かなり制限があります。
+詳細は後述。
+
+%1: 波形番号
+%2: １要素のステップ数・音符数
+%3: 0 = 非同期１
+    1 = 同期
+    2 = 非同期２</pre><h3 id="ref2-c189">TLD&lt;ステップ数&gt;		ディレイ</h3><pre class="original">波形メモリによる TL 変化がかかり始めるまでの
+ディレイ値を設定します。
+設定範囲は -255 ～ 32767 で、初期値は 0 です。</pre><h3 id="ref2-c191">TLM&lt;マスク値&gt;		オペレータ・マスク</h3><pre class="original">変化対象となるオペレータを指定します。
+値は音色定義データのオペレータ・マスク値と同じく、
+0 ～ 15 で、0 ～ 3 ビットがオペレータ 1 ～ 4 に
+対応しています。対応するビットを 1 とすることで、
+変化対象となります。
+特に -1 を指定した場合は、自動的にモジュレータを
+選出しますが、命令解析時に音色データを参照するため、
+この命令以前に音色が定義されている必要があります。
+また、キャリアを変化対象とした場合、このエフェクトが
+音色データの TL 値相対にかかるものであるため、
+v @v などでの変化が考慮されません。特殊な場合を除いて
+モジュレータのみを変化対象とした方が良いでしょう。
+初期値は -1 です。</pre><h3 id="ref2-c193">TLT&lt;音色番号&gt;		音色番号設定</h3><pre class="original">TL 用に疑似的に音色番号を設定します。
+実際に音色の設定は行ないません。
+TLM 同様に、この命令以前に対象となる番号の音色が
+定義されている必要があります。
+音色を切り替えずにエフェクト状況を変化させる時に
+使用します。</pre><h3 id="ref2-c195">TLL&lt;ステップ数&gt;		ステップ数・音符数変更</h3><pre class="original">状態を保持したまま、波形１要素のステップ数や
+音符数を変更します。現在カウント中のステップの
+終了後に値が更新されるので、効果を発揮するまでに
+少し時間がかかる場合があります。</pre><h3 id="ref2-c197">TLON			TL 再開</h3><pre class="original"></pre><h3 id="ref2-c199">TLOF			TL 停止</h3><pre class="original"></pre><h3 id="ref2-c201">YA%1,%2,%3		y コマンド（波形メモリを使用）</h3><pre class="original">%1: 波形番号
+%2: １要素のステップ数・音符数
+%3: 0 = 非同期１
+    1 = 同期
+    2 = 非同期２
+
+波形データの上位バイトをレジスタ番号、下位バイトを
+データとして y コマンドを書き込みます。</pre><h3 id="ref2-c203">YAD&lt;ステップ数&gt;		ディレイ</h3><pre class="original">エフェクトがかかり始めるまでのディレイ値を
+設定します。
+設定範囲は -255 ～ 32767 で、初期値は 0 です。</pre><h3 id="ref2-c205">YAL&lt;ステップ数&gt;		ステップ数・音符数変更</h3><pre class="original">状態を保持したまま、波形１要素のステップ数や
+音符数を変更します。現在カウント中のステップの
+終了後に値が更新されるので、効果を発揮するまでに
+少し時間がかかる場合があります。</pre><h3 id="ref2-c207">YAON			y 書き込み再開</h3><pre class="original"></pre><h3 id="ref2-c209">YAOF			y 書き込み停止</h3><pre class="original"></pre><h3 id="ref2-c211">$FO&lt;数値&gt;		フェードアウト</h3><pre class="original">指定数値に基づいて全チャンネルを
+フェードアウトします。
+数値が小さい程、フェードアウトは
+早くなります。</pre><h3 id="ref2-c213">zc&lt;数値&gt;		#cont 制御</h3><pre class="original">#cont 疑似命令の値を mml 行中で制御します。
+設定範囲は 0 ～ 2 です。</pre><h3 id="ref2-c215">zw&lt;数値&gt;		#wcmd 制御</h3><pre class="original">#wcmd 疑似命令の値を mml 行中で制御します。
+設定範囲は 0 ～ 2 です。</pre><h3 id="ref2-c217">$&lt;マクロ変数名&gt;		マクロ</h3><pre class="original">定義されたマクロが展開されます。
+事前にマクロ内容が定義されていなかった場合、
+内容は空になります。
+例外的に、I J N O X Z h	i j m s u 及び、
+｡ ｰ ﾞ ﾟ ｢ ｣ ･ ､ を除く半角カナ全部については、
+先頭の&#x27;$&#x27;を書かなくても、マクロと認識されます。</pre><h3 id="ref2-c219">!			これ以降の mml をスキップする</h3><pre class="original">対象チャンネルの &#x27;!&#x27; 以降の mml をスキップし、
+コンバートを行ないません。</pre><h3 id="ref2-c221">?			範囲指定型 mml スキップ</h3><pre class="original">&#x27;?&#x27; でくくった範囲中で、実体を持つコマンド
+について、データの書き出しを行ないません。
+実体を持たないコマンド（o &lt; &gt; l など）については、
+状態が保持されますが、実体を持つコマンドは、
+音源ドライバ側に状態が伝わらないので、範囲終了後、
+再設定してやる必要があります。
+また、この範囲中では、文法解釈が甘くなるので、
+注意が必要です。
+さらに、L C などは、そのままコンバートされるので、
+&#x27;?&#x27; を使用するポイントにも注意が必要です。</pre><h3 id="ref2-c223">//  /*  *  ;		これ以降の行端までの mml を無視する</h3><pre class="original">その行の終端まで有効な注釈指定です。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref3">○ 疑似命令</h2><div class="notice">#pcmlistとpcmuse.mapの読込・生成・論理和は未対応です。#pcmlistは警告して無視し、MDXは生成します。#play/#remove/#beep/#verも警告して無視します。以下の原版説明にある外部実行・旧MDX削除・ビープ・詳細色表示は実行しません。#save-tone/#save-waveを使って保存できますが、-t/-wも使え、CLI指定が疑似命令に優先します。CLIの相対名は実行カレント、疑似命令の相対名は命令を書いたファイルのフォルダから解決し、種類ごとに最後の保存名を採用します。</div><pre class="original"></pre><details><summary>コマンド索引</summary><div class="command-index"><a href="#ref3-c1">疑似命令には、以下のものがあります。</a><a href="#ref3-c3">（大文字・小文字の区別はありません）</a><a href="#ref3-c5">#title &quot;タイトル&quot;</a><a href="#ref3-c7">#pcmfile &quot;ファイル名&quot;</a><a href="#ref3-c9">#include &quot;ファイル名&quot;</a><a href="#ref3-c11">#play &quot;&lt;cmd&gt; [arg.[arg..]]&quot;</a><a href="#ref3-c13">#ex-pcm</a><a href="#ref3-c15">#octave-rev</a><a href="#ref3-c17">#tps 数値</a><a href="#ref3-c19">#tps-all</a><a href="#ref3-c21">#detune 数値</a><a href="#ref3-c23">#flat &quot;音程&quot;</a><a href="#ref3-c25">#sharp &quot;音程&quot;</a><a href="#ref3-c27">#natural &quot;音程&quot;</a><a href="#ref3-c29">#normal &quot;音程&quot;</a><a href="#ref3-c31">#nlist</a><a href="#ref3-c33">#list</a><a href="#ref3-c35">#overwrite</a><a href="#ref3-c37">#toneofs 数値</a><a href="#ref3-c39">#noreturn</a><a href="#ref3-c41">#wavemem</a><a href="#ref3-c43">#remove</a><a href="#ref3-c45">#beep</a><a href="#ref3-c47">#reste [0|1]</a><a href="#ref3-c49">#nreste [0|1]</a><a href="#ref3-c51">#coder</a><a href="#ref3-c53">#ncoder</a><a href="#ref3-c55">#glide [0|1]</a><a href="#ref3-c57">#load-tone &quot;ファイル名&quot;</a><a href="#ref3-c59">#save-tone [&quot;ファイル名&quot;]</a><a href="#ref3-c61">#load-wave &quot;ファイル名&quot;</a><a href="#ref3-c63">#save-wave [&quot;ファイル名&quot;]</a><a href="#ref3-c65">#cont [0|1|2]</a><a href="#ref3-c67">#wcmd [0|1|2]</a><a href="#ref3-c69">#pcmlist [0|1]</a><a href="#ref3-c71">#compress [0|1]</a><a href="#ref3-c73">#opt [&quot;dvqpt012*&quot;]</a><a href="#ref3-c75">#ver [0|1]</a><a href="#ref3-c77">［デフォルト設定］</a><a href="#ref3-c79">※以下のものは、mml ファイル中で、何度でも変更（使用）可能です。</a><a href="#ref3-c81">#title</a><a href="#ref3-c83">#detune</a><a href="#ref3-c85">#octave-rev</a><a href="#ref3-c87">#reste</a><a href="#ref3-c89">#glide</a><a href="#ref3-c91">#wcmd</a><a href="#ref3-c93">#save-wave</a></div></details><h3 id="ref3-c1">疑似命令には、以下のものがあります。</h3><pre class="original"></pre><h3 id="ref3-c3">（大文字・小文字の区別はありません）</h3><pre class="original"></pre><h3 id="ref3-c5">#title &quot;タイトル&quot;		タイトル設定</h3><pre class="original">mdx のタイトルを設定します。</pre><h3 id="ref3-c7">#pcmfile &quot;ファイル名&quot;		pcm ファイル名設定</h3><pre class="original">演奏時に使用する pcm ファイル名を設定します。</pre><h3 id="ref3-c9">#include &quot;ファイル名&quot;		ファイル・インクルード</h3><pre class="original">この位置に、指定ファイルを挿入します。
+ファイルのネストは１６段までです。</pre><h3 id="ref3-c11">#play &quot;&lt;cmd&gt; [arg.[arg..]]&quot;	実行コマンド設定</h3><pre class="original">コンバート終了後に実行するコマンドを
+設定します。
+#play &quot;mxp sample&quot; などとしておくと、
+コンバート後に、曲が演奏されます。
+コンバートエラーが発生していた場合や、
+シフトキーが押されている場合は実行されません。
+コマンドはパスに沿って検索されますが、
+フルパスで記述した方が検索時間が省かれる分、
+起動までの時間が短くなります。</pre><h3 id="ref3-c13">#ex-pcm				ex-pcm モード設定</h3><pre class="original">Q ～ W のチャンネルを有効にします。</pre><h3 id="ref3-c15">#octave-rev			&lt; &gt; 上下反転</h3><pre class="original">&lt; &gt; コマンドの上下を反転します。</pre><h3 id="ref3-c17">#tps 数値			トランスポーズ</h3><pre class="original">出力される音程（キーコード）に補正を加えます。
+設定範囲は、-24 ～ 24 です。
+設定後は、全パートに等しく作用しますが、
+pcm パートには作用しません。</pre><h3 id="ref3-c19">#tps-all			トランスポーズが全パートに作用するようにする</h3><pre class="original">この行以降は、pcm パートにも #tps 補正が
+作用します。</pre><h3 id="ref3-c21">#detune 数値			D コマンド用オフセット設定</h3><pre class="original">D コマンドの数値に、設定した数値が
+加算されます。
+設定範囲は、-32768 ～ 32767
+D コマンドを使用しない限り、作用しません。</pre><h3 id="ref3-c23">#flat &quot;音程&quot;			フラット音程設定</h3><pre class="original">指定した音程に、常にフラットが付きます。
+音程は、c d e f g a b の７種類のいずれかで、
+複数の表記が可能です。
+$FLAT と違い、全チャンネルの分を一括して
+指定します。</pre><h3 id="ref3-c25">#sharp &quot;音程&quot;			シャープ音程設定</h3><pre class="original">指定した音程に、常にシャープが付きます。
+音程は、c d e f g a b の７種類のいずれかで、
+複数の表記が可能です。
+$SHARP と違い、全チャンネルの分を一括して
+指定します。</pre><h3 id="ref3-c27">#natural &quot;音程&quot;			#flat / #sharp 解除</h3><pre class="original"></pre><h3 id="ref3-c29">#normal &quot;音程&quot;			指定した音程の、#flat / #sharp 設定を</h3><pre class="original">解除します。
+音程は、c d e f g a b の７種類のいずれかで、
+複数の表記が可能です。
+$NORMAL/$NATURAL と違い、全チャンネルの分を
+一括して指定します。
+特に、音程を省略した場合は、全ての音程を
+解除対象とします。</pre><h3 id="ref3-c31">#nlist				非テキスト領域始点設定</h3><pre class="original">コンバートしない領域の始点を設定します。</pre><h3 id="ref3-c33">#list				テキスト領域始点設定</h3><pre class="original">コンバートする領域の始点を設定します。
+
+#nlist ～ #list で囲まれた範囲は、
+コンバートされません。</pre><h3 id="ref3-c35">#overwrite			後着音色の上書き</h3><pre class="original">以前に同じ番号の音色定義があっても、
+それを無視し、後に来た音色定義を優先し
+上書きします。
+この行以降が、有効範囲です。</pre><h3 id="ref3-c37">#toneofs 数値			音色番号オフセット</h3><pre class="original">ここで設定した値が、音色番号に加算されます。
+音色定義の時と音色設定の時の両方に作用します。</pre><h3 id="ref3-c39">#noreturn			音色再設定をしないようにする</h3><pre class="original">デフォルトでは、K の残響カットの後には、
+現在使用中の音色の再定義が行なわれますが、
+これを指定すると、それを行ないません。</pre><h3 id="ref3-c41">#wavemem			波形用メモリの確保を宣言</h3><pre class="original">約 128 Kbytes（128波形分）のメモリを確保します。
+メモリの確保が出来た場合、これ以降波形メモリ
+及びそれに関する命令が使用可能になります。</pre><h3 id="ref3-c43">#remove				エラー発生時に、mdx ファイル削除</h3><pre class="original">エラーが発生した場合は、mdx ファイルは
+作成しませんが、これを指定すると、
+以前に出来ていたファイルも削除します。</pre><h3 id="ref3-c45">#beep				エラー発生時にビープ音を鳴らす</h3><pre class="original">コンバート動作終了後、エラーが
+１回以上発生していた場合、ビープ音を
+鳴らします。</pre><h3 id="ref3-c47">#reste [0|1]			音符の休息部分も波形エフェクトをかける</h3><pre class="original">引数無し、もしくは 0 を指定した場合は、
+クオンタイズにより休息部分となった音長部分にも
+波形エフェクトをかけます。1 を指定した場合は、
+休符自体にも波形エフェクトがかかります。
+同期モードにおいて、休符で波形の位相を持続させ
+たい場合は、&#x27;&amp;&#x27; で繋ぐか、#cont 2 を指定して
+下さい。</pre><h3 id="ref3-c49">#nreste [0|1]			音符の休息部分と休符に波形エフェクトをかけない</h3><pre class="original">波形エフェクトを、音符の実音長部分のみに
+かかるようにします。引数に、0 以外の数字を
+指定した場合は、実音長が切れた時点で、
+波形エフェクトで変化した状態を、エフェクト前の
+状態に戻します。引数無し、もしくは 0 を
+指定した場合は、この戻す動作を行ないません。</pre><h3 id="ref3-c51">#coder				コード入力不足分を休符で補う</h3><pre class="original">チャンネル識別子の数に対して、音符・休符の
+数が少ない場合、自動的に休符で補います。</pre><h3 id="ref3-c53">#ncoder				コード入力不足分を休符で補わない</h3><pre class="original">チャンネル識別子の数に対して、音符・休符の
+数が少ない場合、後方のチャンネルには、
+何も置きません。</pre><h3 id="ref3-c55">#glide [0|1]			グライド加工抑制条件設定</h3><pre class="original">引数無し、もしくは 0 を指定した場合は、
+&#x27;&amp;&#x27; 直後の音符でもグライド加工を行ないますが、
+引数に 0 以外の数字を指定すると、&#x27;&amp;&#x27; で
+接続された音符のうち、最初の音符のみ加工を
+行なうようにします。</pre><h3 id="ref3-c57">#load-tone &quot;ファイル名&quot;		-t スイッチで作成した音色データをロード</h3><pre class="original">音色データおよび音色登録状況をロードします。
+事前に音色定義がされていた場合でも、
+ロード内容により初期化されてしまうので、
+注意が必要です。</pre><h3 id="ref3-c59">#save-tone [&quot;ファイル名&quot;]	音色データ（バイナリ）をセーブ</h3><pre class="original">-t スイッチと同じです。
+ただし、コマンドラインで指定された状態の方が
+優先されます。</pre><h3 id="ref3-c61">#load-wave &quot;ファイル名&quot;		-w スイッチで作成した波形データをロード</h3><pre class="original">波形データおよび波形登録状況をロードします。
+事前に波形定義がされていた場合でも、
+ロード内容により初期化されてしまうので、
+注意が必要です。
+再定義可能という波形の性質を考慮して、
+各チャンネル毎にロードを行ないます。</pre><h3 id="ref3-c63">#save-wave [&quot;ファイル名&quot;]	波形データ（バイナリ）をセーブ</h3><pre class="original">-w スイッチと同じです。
+ただし、コマンドラインで指定された状態の方が
+優先されます。</pre><h3 id="ref3-c65">#cont [0|1|2]			&#x27;&amp;&#x27; による波形の位相継続の有無</h3><pre class="original">普通、波形エフェクトでは、&#x27;&amp;&#x27; で繋がれた
+音符・休符は１つのものとして扱い、音符途中での
+波形の位相の初期化・更新は行ないませんが、
+引数に 1 を指定することにより、&#x27;&amp;&#x27; を無視し、
+位相の初期化・更新を行なうようにします。
+2 を指定した場合は、1 の場合に加え、
+同期モードにおける位相の初期化を、休符では
+行なわなくなります。
+引数無し、もしくは 0 を指定した場合は、
+通常通り位相は継続されます。</pre><h3 id="ref3-c67">#wcmd [0|1|2]			波形エフェクト中の関連コマンド書き込み抑制</h3><pre class="original">AP DT VM が有効な区間での、各エフェクトに
+関連する一般コマンド（p,D,v,@v,(,),V）の
+書き込みの抑制状態を設定します。
+1 を指定した場合は、関連コマンドの書き込みは
+行いませんが、その設定値は記憶され、
+波形エフェクトに影響を与えます。
+2 を指定した場合は、関連コマンドを完全に
+無視します。
+引数無し、もしくは 0 を指定した場合は、
+通常どおり、コマンドを書き込みます。</pre><h3 id="ref3-c69">#pcmlist [0|1]			pcm 使用状況ファイル(pcmuse.map)を出力</h3><pre class="original">-l -o スイッチと同じです。
+引き数無し、もしくは 0 を指定した場合、
+-l のみと同じ動作をします。
+1 を指定した場合は、-l -o と同じ動作をします。</pre><h3 id="ref3-c71">#compress [0|1]			音長を圧縮する</h3><pre class="original">-c[n] スイッチと同じです。
+引き数無し、もしくは 0 を指定した場合、
+-c と同じ動作をします。
+1 を指定した場合は、-cn と同じ動作をします。
+ただし、コマンドラインで指定された状態の方が
+優先されます。また、この命令以降が有効範囲で、
+初期状態は圧縮無しになっています。</pre><h3 id="ref3-c73">#opt [&quot;dvqpt012*&quot;]		最適化</h3><pre class="original">-z スイッチと同じです。
+引き数を省略した場合は、最適化を停止します。
+引き数に &#x27;*&#x27; を指定した場合は、&#x27;dvqpt012&#x27; と
+指定したのと同じになります。</pre><h3 id="ref3-c75">#ver [0|1]			バーボーズ・モード</h3><pre class="original">-v スイッチと同じです。
+ただし、コマンドラインで指定された状態の方が
+優先されます。また、この命令以降が有効範囲と
+なっており、初期状態では、バーボーズ・モード
+ではありません。それと、-v スイッチと違い、
+現在作業中のチャンネルが表示されません。</pre><h3 id="ref3-c77">［デフォルト設定］</h3><pre class="original">#tps 0			トランスポーズ	:0
+#detune 0		D オフセット	:0
+#natural &quot;cdefgab&quot;	sharp/flat 指定無し
+#list			テキスト領域
+#nreste 0		波形エフェクトは実音長部分のみ
+#ncoder			コード入力で休符を補わない
+#glide 0		直前に &#x27;&amp;&#x27; があってもグライド加工を行なう
+#cont 0			&#x27;&amp;&#x27; による波形の位相継続有り
+#wcmd 0			波形エフェクト中でも関連コマンドを書き込む
+#toneofs 0		音色番号オフセット :0</pre><h3 id="ref3-c79">※以下のものは、mml ファイル中で、何度でも変更（使用）可能です。</h3><pre class="original"></pre><h3 id="ref3-c81">#title		#pcmfile	#include	#tps</h3><pre class="original"></pre><h3 id="ref3-c83">#detune		#flat		#sharp		#natural(normal)</h3><pre class="original"></pre><h3 id="ref3-c85">#octave-rev	#play		#nlist		#list</h3><pre class="original"></pre><h3 id="ref3-c87">#reste		#nreste		#coder		#ncoder</h3><pre class="original"></pre><h3 id="ref3-c89">#glide		#load-tone	#load-wave	#cont</h3><pre class="original"></pre><h3 id="ref3-c91">#wcmd		#pcmlist	#compress	#save-tone</h3><pre class="original"></pre><h3 id="ref3-c93">#save-wave	#opt		#ver		#toneofs</h3><pre class="original"></pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref4">○ 音符</h2><div class="notice">【原版からの機能拡張：連続臨時記号】notemdx.exe 0.8では音程に続く臨時記号を順にすべて処理します。最初の明示記号は調号に優先し、+ごとに半音上げ、-ごとに半音下げ、=または&quot;で自然音へ戻します。d++はe（ダブルシャープ）、d--はc（ダブルフラット）、d+++はf、d+&quot;はdです。通常音符・コード構成音・ポルタメント目標音で共通です。引用符によるマクロ本文では=を使用してください。</div><pre class="original">音符は、
+
+	音程[音長]
+
+の、音程・音長表記から構成されます。
+
+音長を省略した場合は、l コマンドで指定した基本音長が
+用いられます。
+
+音程は a ～ g と +(sharp) 、-(flat) 、=(natural)、
+&quot;(natural) で表わされます。（&quot; によるナチュラルは、
+マクロ中では使用できません。）
+特に、e+ 、f- 、b+ 、c- は存在しませんが、表記としては、
+許されていて、それぞれ、f 、e 、&gt;c&lt; 、&lt;b&gt; と同じ意味に
+なります。
+
+mxdrv2 での、実際に発音可能な音程範囲は、o0 d+ ～ o8 d と
+なっています。o / #tps / TR による補正を加味した結果、この
+範囲内に音程がおさまっていれば、エラーとはなりません。
+
+
+音長は、以下の２種類の表記方法があります。
+
+	1) %&lt;ステップ数&gt;
+	2) &lt;音長&gt;
+
+1)ステップ数は、４分音符を 48 等分した長さです。
+192 ステップで、全音符の長さとなります。
+
+2)音長は、全音符を元に、それを何等分したかを表わしています。
+例えば、４分音符の場合、
+
+	 　全音符(1) / 4
+	 = 192 step / 4
+	 = 48 step
+
+となります。
+
+特に、３連符を表わしたい場合は、音長に３をかけたものを用います。
+例えば、ラの８分音符の３連符を表わしたい場合、
+
+	8 x 3 = 24:
+
+	a24 a24 a24
+
+となります。
+
+使用できる 2)音長は、192 を割って、端数が出ない物です。
+
+2)音長と同時に、符点を用いると、符点を含む直前の
+音長表記の半分の長さの音長が加算されます。
+例えば、
+
+	4.  = 4 分音符 + 8 分音符
+	    = 48 + 24
+	    = 72 step
+
+	4.. = 4 分音符 + 8 分音符 + 16 分音符
+	    = 48 + 24 + 12
+	    = 84 step
+
+となります。
+
+また、1) 2) 表記は、&#x27;^&#x27; で加算、&#x27;~&#x27; で減算が可能です。
+例えば、符点４分音符は、以下のような表記が可能です。
+
+	4.  =  4^8  =  %48^8  =  4^%24  =  %48^%24
+	    =  2~8  =  %96~8  =  2~%24  =  %96~%24
+
+&#x27;^&#x27; と &#x27;~&#x27; との併用も可能です。
+計算の結果、最終的に音長が %1 ～ %256 の範囲に収まっていれば、
+エラーにはなりません。
+
+連符の音長を指定する時以外においては、音長は
+%256 を越えることは出来ません。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref5">○ 音長（補足）</h2><pre class="original">音程番号表記を用いた場合には、音長の表記方法が
+少々特殊になります。
+
+通常では、
+
+	n&lt;音程番号&gt;,&lt;音長&gt;
+
+など、音長の直前に &#x27;,&#x27; を書きますが、&lt;音長&gt; 部分が
+% 表記になっている場合、および数字から始まる場合は、
+&#x27;,&#x27; の代わりに &#x27;.&#x27; を用いることが出来ます。
+
+例）	n0.4
+	n0.%48		どちらも 48 ステップ
+
+
+また、&lt;音程番号&gt; の後に &#x27;.&#x27; を用いた場合で、
+&#x27;.&#x27; の直後が &#x27;^&#x27; の場合、および上記の条件以外の場合、
+&#x27;.&#x27; は音長とみなされます。
+
+例）l4 の場合
+
+	n0.		(48+24) ステップ
+	n0.^4		(48+24)+48 ステップ
+
+
+この他にも以下のような表記が可能です。
+
+例）l4 の場合
+
+	表記		ステップ数
+----------------------------------------
+	n0%48		48
+	n0,		48
+	n0^		48+48
+	n0~8		48-24
+	n0,.		48+24
+	n0^.		48+(48+24)</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref6">○ 音色定義</h2><pre class="original">@0 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0,  3,  6,  0, 28,  0,  1,  0,  0,  0,
+	 30,  0,  3,  6,  0, 24,  0,  1,  0,  0,  0,
+	 28, 18,  3,  9, 11,  9,  0,  0,  0,  0,  0,
+	 26,  0, 15, 10,  0,  0,  0,  1,  0,  0,  0,
+/*	ALG  FL  OP
+	  3,  0, 15
+}
+
+上記のような、
+
+	@&lt;音色番号&gt; = {param1 , ～ , param47}
+
+というフォーマットで音色を定義します。
+（必ず 47 個の数値を指定する）
+
+定義位置は任意です。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref7">○ マクロ定義</h2><div class="notice">現在は入力累計8MiB、展開16MiBの既定上限があります。引用符で囲んだマクロは、対応する閉じ引用符までが本文です。閉じ引用符後の説明文は含みません。</div><pre class="original">マクロは、
+
+	&lt;マクロ変数名&gt;[添え字] = &quot;内容&quot;
+
+というフォーマットで定義します。
+
+マクロ変数名に使用できる文字は、現在のところ、
+
+	I J K L M N O X Y Z
+	a ～ z
+	｡ ｰ ﾞ ﾟ ｢ ｣ ･ ､ を除く半角カナ全部
+
+の 91 個です。
+
+添え字には、0 ～ 19 が使用でき、これにより、
+
+	91 x (20 + 1) = 1911
+
+のマクロが使用できることになります。
+
+マクロ中にもマクロが使用でき、ネスト上限は８段となっています。
+マクロ内容の長さには、制限はありません。
+初期状態で、未設定のマクロの内容は、空になっています。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref8">○ 音色マクロ定義</h2><pre class="original">音色マクロは、
+
+	@@&lt;音色番号&gt; = &quot;内容&quot;
+
+というフォーマットで定義します。
+
+定義された内容は、該当音色が使用された直後に展開されます。
+マクロ内容の長さには、制限はありません。
+既定では、音色マクロの設定内容は有効となっていますが、
+SMON / SMOF により、有効・無効が操作出来ます。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref9">○ 波形エフェクト</h2><div class="notice">参照MDXに合わせ、音符数モードの正のディレイは無視します。波形による分割は通常のMDX命令で表現し、独自の拡張命令は追加しません。</div><pre class="original">波形メモリに関するエフェクトは、ソフト的に音符を分割し
+それぞれのコマンドを書き込むことによって行なわれます。
+よって、波形データ１要素のステップ数を小さくすると、
+mdx ファイルが、より大きなサイズになるので注意が必要です。
+
+	例）オートパンの場合
+
+		@w0 = {0,0,1,3}
+
+		A AP0,1,1 a%48
+
+			↓
+
+		A p1 a%1&amp; p3 a%47
+
+
+例は、同期モード、音符１ステップ単位割り込み、
+ループ無し波形を用いた場合です。
+
+AP KM DT VM TL の第３パラメータは、同期・非同期の指定で、
+0 は、音符の開始に関係なく、常に波形の位相を進める非同期モード１、
+1 は音符の開始とともに波形の位相を初期化する同期モード、
+2 は、波形の位相を進める最小単位を、通常の１ステップ単位から、
+　１音符単位に変更した、非同期モード２です。
+
+非同期モード２の場合、休符は音符とみなされず、波形の位相が
+更新されることはありませんが、#reste 1 を指定した状態では、
+休符も音符と同じ扱いになり、位相が更新されます。
+
+同期モードの場合、&#x27;&amp;&#x27; で接続された音符は１つの音符として扱い、
+&#x27;&amp;&#x27; の位置での位相の初期化は行なわれませんが、#cont 1 を
+指定すると、&#x27;&amp;&#x27; がある場合でも、前後の音符・休符は別々の
+ものであるとみなし、&#x27;&amp;&#x27; の位置での位相の初期化を行ないます。
+非同期モード２の場合も同様に、#cont 1 を指定した場合は、
+&#x27;&amp;&#x27; で接続された音符・休符は別々のものとみなし、各音符・休符毎に
+位相の更新が行なわれます。
+
+各エフェクトには、ディレイ値の設定がありますが、特に、
+負の値を指定した場合は、ディレイの始点をキーオフの時点とし、
+「その位置のステップ数＋ディレイ値」の位置を、エフェクトの
+開始位置とします。（音符の末尾を加工するような感じ）
+開始位置が負の値となった場合は、ディレイ値が 0 の場合と
+同じ動作をしますが、エフェクト開始位置の換算方法から分るように、
+&#x27;&amp;&#x27; で接続された音符などの場合、最後の音符のみがエフェクト対象と
+なります。ただし、#cont 1 or 2 が指定されている場合は、各音符が
+エフェクト対象になります。
+また、この負の値が有効なのは、同期モードの時のみで、
+その他のモードの時は、0 と同じ扱いになります。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref10">○ 波形メモリ定義</h2><div class="notice">現在の位相が範囲外になるよう動作中の波形を短く再定義する場合は、先に効果をOFFにしてください。</div><pre class="original">波形メモリの定義は、各行の先頭から、
+
+	@w&lt;波形番号&gt; = {%1,%2, %3, ... }
+
+というフォーマットで行ないます。
+
+定義位置は任意で、定義位置以降が有効範囲です。
+波形番号は、0 ～ 127 です。
+
+%1,%2 の値は、それぞれ、
+
+	%1: 波形タイプ
+	　　0 = ループ無し
+	　　1 = ループ有り
+
+	%2: ループポイント（%1 = 1 の場合）
+	　　ループ開始位置を指定
+
+%3 以降が実際の波形データで、%3 の位置が
+始点(0)となり、ループポイントは、この位置を基準に
+指定します。データの最大数は 512 です。
+
+数値の範囲は、-32768 ～ 32767 で、先頭に
+&#x27;$&#x27; を付けることにより、１６進数も使用可能です。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref11">○ 音色番号マップ定義</h2><pre class="original">マップの定義は、各行の先頭から、
+
+	@k&lt;マップ番号&gt; = {%1,%2, %3, ～ ,%96}
+
+というフォーマットで行ないます。
+（必ず 96 個の数値を指定する）
+
+定義位置は任意で、定義位置以降が有効範囲です。
+マップ番号は、0 ～ 7 です。
+
+%1 ～ %96 は、それぞれ o0d+ ～ o8d の音程に
+対応しており、その値は各音程がどの番号の
+音色を使用するかを表わします。
+
+値の範囲は、音色番号ということから、
+0 ～ 255 です。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref12">○ チャンネル別指定</h2><pre class="original">チャンネル識別子を複数書いた場合に有効です。
+
+	ABC | D0p3v15c : D-4p1v13c : D4p2v12c |
+
+などとした場合、
+
+	A D0p3v15c
+	B D-4p1v13c
+	C D4p2v12c
+
+といった具合いに展開されます。
+
+mml の割り振り具合いは、チャンネル識別子を書いた順番ではなく、
+チャンネルの若い順に &#x27;:&#x27; で区切られた mml が割り当てられます。
+
+また、
+
+	BCD |:o4c:|
+	BCD |:o4c|
+
+などとした場合は、
+
+	C o4c
+
+となります。
+
+チャンネル識別子より、区切りの数が多い場合、超過部分は
+無視されます。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref13">○ コード入力</h2><pre class="original">チャンネル別指定を、音符・休符にしぼったものです。
+チャンネル識別子と、｢｣ (``) を組み合わせて、コードの入力が出来ます。
+
+例えば、
+
+	ABC ｢ceg｣8	（または、ABC `ceg`8）
+			　&#x27;`&#x27; は、[SHIFT]+[@]
+
+とした場合、
+
+	A c8
+	B e8
+	C g8
+
+と展開されます。
+
+｢｣ 中では、音符・休符の他に &lt; &gt; が認識されるため、
+オクターブにまたがったコードの入力も可能です。
+｢｣ 内では、コードの組成のみが記憶されるため、
+オクターブ自体は、外部から定義してやる必要があります。
+
+また、既定では、
+
+	ABC ｢ce｣
+
+など、識別子の数に対して、｢｣ の内容が少ない場合、
+後方のチャンネルには、何も展開されません。
+
+	ABC ｢ceg&gt;c｣
+
+逆に、識別子の数に対して、｢｣ の内容が多い場合、
+｢｣ 内の超過分は無視されます。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref14">○ 文字列</h2><pre class="original">notemdx.exe 0.8 での、疑似命令などにおける文字列の扱いを述べておきます。
+
+一般に、文字列を引数として持つ疑似命令の場合、
+渡された文字列のうち、半角空白やタブを区切りとする
+最初の１群を引数であるとみなし、２群以降は無視されます。
+
+例）	#title 1st. item
+
+	などとした場合、&#x27;1st.&#x27; がタイトルになる。
+
+
+よって、半角空白やタブを含む文字列を引数として
+渡したい場合は、クオートする必要があります。
+
+例）	#title &quot;1st. item&quot;
+
+	などとした場合、&#x27;1st. item&#x27; がタイトルになる。
+
+
+クオート文字は、２種類有り、&#x27; と &quot; が使えます。
+また、クオート文字自体は、もう一方のクオート文字で
+クオートすることが可能です。
+
+例）	#title &quot;It&#x27;s&quot;
+	#title It&quot;&#x27;&quot;s		→ It&#x27;s
+
+	#title &#x27;&quot;start&quot;&#x27;
+	#title &#x27;&quot;&#x27;start&#x27;&quot;&#x27;	→ &quot;start&quot;
+
+
+上記のクオート方法から分るように、以下のような表記は
+許されていません。
+
+例）	#title&quot;start&quot;
+
+	→ #titlestart という文字列とみなされる。
+
+
+クオートが終了していない場合、クオート範囲は
+行末までとなります。
+
+例）	#title &quot;1st. 2nd.
+	#title &#x27;1st. 2nd.
+	#title 1st.&quot; 2nd.
+	#title 1st.&#x27; 2nd.
+
+	→ &#x27;1st. 2nd.&#x27; がタイトルになる。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref15">○ $FLAT/$SHARP/$NATURAL、#flat/#sharp/#natural</h2><pre class="original">主に、調の指定に使用します。
+
+$～と、#～の違いは、$～ が対象チャンネル内でのみ
+有効なのに対して、#～は全チャンネルに有効です。
+また、$～ #～ を同時に使用した場合の優先順位は、
+どちらも等しく、後に指定した方が優先されます。
+
+また、pcm パートにおいても、通常の音程表記を
+用いた場合は、この補正が有効になるので、
+注意が必要です。
+
+トランスポーズと同時に使用した場合、先に
+$FLAT などの補正を行なった後にトランスポーズが
+行なわれます。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref16">○ グライド</h2><div class="notice">GLON再開時の整数半音グライドでF3設定・復帰も出す挙動は、参照MDXに合わせています。詳細はCOMPATIBILITY.mdとIL_VALIDATION.mdを参照してください。</div><pre class="original">グライドは、具体的には以下のように加工されます。
+
+	A GL-32,6 c4
+
+		↓
+
+	A D-32 c%6_D32 &amp; D0 c%42
+
+ここで設定される D の値は、以前に使用された、
+通常の D コマンドおよび #detune の値が反映されます。
+
+例）	A GL-32,6 D4 c4
+
+		↓
+
+	A D-28 c%6_D32 &amp; D4 c%42
+
+
+また、グライド値が 64 で割り切れる場合で、
+グライド開始音程が音程範囲におさまっている場合は、
+D は使用されません。
+
+例）	A GL-64,6 o4 c4
+
+		↓
+
+	A o4 &lt;b%6_&gt;c &amp; c%42
+
+
+音符の音長が、グライド・ステップ数未満の場合は、
+グライド加工は行なわれません。
+
+（グライド値 x 256 / ステップ数）が、符号付き２バイトの
+数値範囲に納まらない場合は、エラーになります。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref17">○ 相対ボリューム</h2><pre class="original">( ) コマンドは、
+
+	v4 [a)]8
+
+などとした場合、
+
+	v4 a v5 a v6 a v7 .... a v12
+
+となりますが、
+
+	v4 [a V1]8
+
+の場合は、V コマンド解釈の時点での音量から
+相対的に音量を算出し v , @v コマンドに変換するため、
+
+	v4 [a v5]8
+
+となります。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref18">○ ポルタメント</h2><pre class="original">o0d+8_o8d
+
+のように、ポルタメントの限度を越えるような場合は、
+ポルタメントは行なわれず、
+
+	o0d+8
+
+に変換されます。
+
+	o0d+8_o8d4
+
+など、ポルタメント後の音長指定がある場合は、
+
+
+	o0d+8 &amp; o8d8
+
+といった具合いに変換されます。</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="ref19">○ TL（波形エフェクト）</h2><pre class="original">現在使用されている音色データから、対象オペレータの
+トータル・レベルを調べ、その値相対でエフェクトをかけます。
+よって、この命令以前に音色定義がされていることと、
+１度以上音色設定コマンドが使用されていることが必要です。
+
+また、「音色設定コマンドがあっても、キー・オンされるまでは、
+OPM への音色の定義はされない」という mxdrv の音色設定コマンドの
+仕様により、音色設定直後からのエフェクトは、期待どおりには
+動作しません。
+
+例）
+
+	@0 TL0,1,1 a	などの場合
+
+音色設定後、１度以上キー・オンされている場合は大丈夫です。
+
+例）
+
+	@0 a TL0,1,1 a	などの場合</pre><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="limits">現在の制限と検証範囲</h2><p>ファイル全体の上限は既定64KiBで、-mSIZEで増やせます。改訂2では音色データを末尾に置いた67,488バイトの元MDXを-m256で全バイト再現しました。トラック・音色領域の開始位置はデータ先頭から65535以内である必要があります。今回の原版も、トラック位置超過と長距離ループの6入力を拒否しました。詳細はLARGE64K_VALIDATION.mdを参照してください。include16段、通常マクロ8段、ループ32段。相対ジャンプは符号付き16bit範囲として検査します。連符の1要素は256ステップ以下です。診断の列はCP932のバイト位置で、タブは1文字として数えます。</p><p>同梱の実曲11曲は全バイト一致（STAGE5/6は-c -z、他は既定設定）。別の33入力は31本が全バイト一致、2本は欠落E8を補った比較コピーと一致します。2本は原本との一致件数には含めません。追加の大容量MDX2本と音色・波形バンク2本も一致しています。任意の全入力での完全互換や実機再生は未確認です。</p><p>Windows用にはVisual Studio 2022のソリューションを同梱しています。Release/x64でビルドするとnotemdx.exeとnotemdx_core.libを生成します。改訂2の提供ログではMSVCビルド成功とCTestの7件成功を確認しました。残る説明書テストの文字コードエラーを改訂3で修正し、Linux/GCCとCP932既定の模擬環境で検証しています。改訂3のWindows再実行は未確認です。詳しくはREADME_JA.mdとAPI.mdを参照してください。</p><a class="back" href="#top">↑ 目次へ</a></section>
+<section><h2 id="origin">作成根拠・補助資料</h2><p>本ツールは「mml file converter for mxdrv2 v0.8.5 1994,95 by DIS」のドキュメントに基づき、原プログラムや第三者実装のソースを使用せずに作成しました。入力文法の根拠はユーザー提供のnote.docです。文書に基づく独立実装には、下記の補助資料と原版の実出力による検証を含みます。</p>
+<div class="table-scroll"><table><thead><tr><th>資料</th><th>用途・内容</th><th>照合結果・記録</th></tr></thead><tbody><tr><td>note.doc</td><td>NOTE v0.8.5の入力文法・スイッチ。CP932原文を同梱</td><td>日英説明書の基礎。実装との差は各項の補足を優先</td></tr><tr><td>MXDRVデータ資料（YURAYSAN氏）</td><td>出力形式の補助資料。下記URLに転載</td><td>記述と実出力が食い違う箇所は実出力を優先</td></tr><tr><td>priority.zip / effects.zip / followup.zip / remaining.zip（2026-09-25受領）</td><td>小規模33入力の元MDXと音色・波形バンク2本</td><td>31本は全バイト一致、2本はEX-PCMの比較コピー補正後一致。バンク2本一致。VALIDATION.md</td></tr><tr><td>IL.zip（2026-09-25受領）</td><td>実曲11組のMUS・MDX</td><td>11曲全バイト一致。STAGE5/6は-c -z、他は既定設定。IL_VALIDATION.md</td></tr><tr><td>large64k.zip（2026-09-26受領）</td><td>元MDX2本・LOG8本。入力はprobes/large64kの8本</td><td>K00SAFE 56,093バイト、K01TAIL 67,488バイトが-m256で全バイト一致。残り6入力は原版も拒否。LARGE64K_VALIDATION.md</td></tr><tr><td>err.log（2026-09-26受領）</td><td>ユーザー環境のMSVCビルド・CTestログ。MDX形式の根拠とは区別</td><td>改訂2ビルド成功、CTest 7/8成功。説明書のCP932エラーを改訂3で修正。CTEST_FIX.md</td></tr></tbody></table></div>
+<p>補助資料：<a href="https://w.atwiki.jp/mxdrv/pages/23.html">MXDRVデータ資料</a> に転載された当時のYURAYSAN氏の資料。第三者実装のソースは使用していません。</p>
+<p>全52入力の内訳は、元MDXとの全バイト一致44本、EX-PCMの比較コピー補正後一致2本、元ログと同じ拒否結果6本です。音色・波形バンク2本は別集計です。6本の診断文・位置・件数の完全一致や実機再生を確認したものではありません。原版のログには起動引数が残っていないため、依頼時のコマンドと実行済みの引数を同一視しません。</p><p>ここでいう文書に基づく作成とは、原プログラムや第三者実装のソースを用いない独立実装を意味します。上記の補助資料と実出力による照合を含みます。提供されたnote.doc、楽曲MML・MDX等は、新規ソース用の0BSDライセンスによる再許諾の対象には含めません。</p><a class="back" href="#top">↑ 目次へ</a></section></main><a class="top" href="#top">↑ Index</a></body></html>

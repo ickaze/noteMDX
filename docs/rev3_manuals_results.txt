@@ -1,0 +1,1 @@
+Two HTML manuals: tag structure, local links, index anchors, version and Japanese source coverage passed

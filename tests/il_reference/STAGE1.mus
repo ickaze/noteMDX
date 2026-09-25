@@ -1,0 +1,1592 @@
+#title "[ R.E.D.             (1st.)] for Illumination Laser Composed by I.C.KaZe"
+#overwrite
+#wavemem
+
+/*Brass
+@000 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31, 15,  3,  0,  3, 17,  0,  1,  3,  0,  0,
+	 28,  0,  0,  6,  0,  0,  0,  3,  0,  0,  0,
+	 24,  0,  0,  5,  0,  0,  0,  2,  3,  0,  0,
+	 21,  0,  0,  4,  0,  0,  0,  0,  7,  0,  0,
+/*	ALG  FL  OP
+	  5,  7, 15
+}
+
+/*BooBass
+@001 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  6,  0,  0,  1, 23,  0,  0,  3,  0,  0,
+	 31,  0,  0,  3,  0, 18,  0,  3,  2,  0,  0,
+	 31,  0,  0,  3,  0, 23,  0,  2,  5,  0,  0,
+	 31,  0,  0,  3,  0,  0,  0,  4,  7,  0,  0,
+/*	ALG  FL  OP
+	  3,  7, 15
+}
+
+@001 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  6,  0,  0,  1, 23,  0,  0,  3,  0,  0,
+	 31,  0,  0,  3,  0, 18,  0,  0,  2,  0,  0,
+	 31,  0,  0,  3,  0, 23,  0,  1,  5,  0,  0,
+	 31,  0,  0,  3,  0,  0,  0,  2,  7,  0,  0,
+/*	ALG  FL  OP
+	  3,  7, 15
+}
+/*Strings
+@002 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31, 12,  0,  0,  2, 18,  0,  2,  3,  0,  0,
+	 31, 12,  0,  0,  2, 18,  0,  3,  1,  0,  0,
+	 31,  0,  0,  0,  0, 23,  0,  5,  2,  0,  0,
+	 31,  0,  0,  3,  0,  0,  0,  4,  0,  0,  0,
+/*	ALG  FL  OP
+	  3,  1, 15
+}
+/*           Gyoooooo BASS
+@02= {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+    21,  0,  0,  0,  0, 24,  0,  2,  2,  0,  0,
+    04,  0,  0,  0,  0, 18,  0,  1,  7,  0,  0,
+    21,  0,  0,  0,  0, 24,  0,  1,  1,  0,  0,
+    21,  0,  1,  3,  0,  0,  0,  3,  2,  0,  0,
+/*  CON FL  OP
+     3,  7, 15
+}
+@02= {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+    21,  0,  0,  0,  0, 24,  0,  2,  2,  0,  0,
+    04,  0,  0,  0,  0, 18,  0,  1,  7,  0,  0,
+    21,  0,  0,  0,  0, 24,  0,  1,  3,  0,  0,
+    21,  0,  1,  3,  0,  0,  0,  3,  2,  0,  0,
+/*  CON FL  OP
+     3,  7, 15
+}
+@02 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0,  0,  0,  0, 24,  0,  1,  3,  0,  0,
+	 16,  5,  0,  6,  2,  0,  0,  3,  7,  0,  0,
+	 31,  0,  0,  0,  0, 24,  0,  0,  7,  0,  0,
+	 16,  5,  0,  6,  2,  0,  0,  2,  3,  0,  0,
+/*	ALG  FL  OP
+	  4,  0, 15
+}
+
+
+/*Mowa
+@003 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 11,  0, 10, 10,  0, 30,  0,  2,  7,  0,  0,
+	 31,  0,  0, 10,  0,  0,  0,  3,  3,  0,  0,
+	 11,  0, 10, 10,  0, 30,  0,  1,  3,  0,  0,
+	 31,  0,  0, 10,  0,  0,  0,  3,  7,  0,  0,
+/*	ALG  FL  OP
+	  4,  0, 15
+}
+
+/*Bass
+@004 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31, 14,  0,  0,  8, 32,  0,  3,  3,  0,  0,
+	 31, 12,  0,  6, 13, 24,  0,  5,  2,  0,  0,
+	 31,  0,  0,  6,  0, 28,  0,  2,  5,  0,  0,
+	 31,  0,  0,  6,  0,  0,  0,  4,  7,  0,  0,
+/*	ALG  FL  OP
+	  2,  7, 15
+}
+
+             G.Bass
+@004 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 21, 10,  0,  6,  2, 16,  0,  3,  0,  0,  0,
+	 21, 15,  0,  6,  3, 30,  0,  1,  0,  0,  0,
+	 21, 31,  7, 15,  2, 28,  0,  0,  0,  0,  0,
+	 31,  0,  6,  6,  0,  0,  0,  1,  0,  0,  0,
+/*	ALG  FL  OP
+	  3,  4, 15
+}
+
+/*Guiter
+@005 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 16, 18,  0,  0,  2, 19,  0,  4,  7,  0,  0,
+	 17, 12,  8,  5,  2, 18,  0,  1,  1,  0,  0,
+	 31, 18,  6,  7,  3, 25,  0,  5,  7,  0,  0,
+	 17,  0,  0,  5,  0,  0,  0,  3,  3,  0,  0,
+/*	ALG  FL  OP
+	  3,  7, 15
+}
+
+@005 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 16, 18,  0,  0,  2, 19,  0,  1,  3,  0,  0,
+	 17, 12,  8,  5,  2, 18,  0,  2,  6,  0,  0,
+	 31, 18,  6,  7,  3, 25,  0,  1,  2,  0,  0,
+	 17,  0,  0,  5,  0,  0,  0,  3,  7,  0,  0,
+/*	ALG  FL  OP
+	  3,  7, 15
+}
+
+/*BELL
+ 006 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31, 15,  0,  0,  2, 26,  0, 14,  3,  0,  0,
+	 21,  0, 10,  5,  0,  0,  0,  4,  7,  0,  0,
+	 31, 15,  0,  0,  2, 28,  0, 14,  7,  0,  0,
+	 21,  0, 10,  5,  0,  0,  0,  4,  3,  0,  0,
+/*	ALG  FL  OP
+	  4,  7, 15
+}
+@006 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31, 15,  0,  0,  2, 26,  0, 14,  3,  0,  0,
+	 21,  0, 10,  7,  0,  0,  0,  4,  7,  0,  0,
+	 31, 15,  0,  0,  2, 28,  0, 14,  7,  0,  0,
+	 21,  0, 10,  7,  0,  0,  0,  4,  3,  0,  0,
+/*	ALG  FL  OP
+	  4,  7, 15
+}
+
+/*Code
+@007 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0,  0,  0,  0, 36,  0,  6,  7,  0,  0,
+	 14,  0,  1,  5,  0,  0,  0,  6,  3,  0,  0,
+	 31,  0,  0,  0,  0, 32,  0,  9,  7,  0,  0,
+	 14,  0,  1,  5,  0,  0,  0,  9,  3,  0,  0,
+/*	ALG  FL  OP
+	  4,  7, 15
+}
+
+/*Piano
+@008 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 29,  4,  0,  4,  2, 35,  1,  1,  7,  0,  0,
+	 31, 12,  8,  5,  1, 30,  1,  3,  7,  0,  0,
+	 31,  8,  4,  5,  3, 35,  2, 12,  3,  0,  0,
+	 28,  8,  0,  5,  1,  1,  0,  2,  7,  0,  0,
+/*	ALG  FL  OP
+	  2,  7, 15
+}
+ @008 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 25, 15, 10, 15,  4, 38,  0,  2,  3,  0,  0,
+	 25, 13, 10, 15,  7,  0,  0,  2,  3,  0,  0,
+	 31, 15, 14, 15,  4, 32,  0,  2,  7,  0,  0,
+	 31, 13, 14, 15,  7,  1,  0,  2,  7,  0,  0,
+/*	ALG  FL  OP
+	  4,  6, 15
+}
+ @008 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 25,  4,  0,  4,  2, 38,  0,  2,  3,  0,  0,
+	 25,  8,  0,  5,  1,  0,  0,  2,  3,  0,  0,
+	 31,  4,  0,  4,  2, 32,  0,  2,  7,  0,  0,
+	 31,  8,  0,  5,  1,  1,  0,  2,  7,  0,  0,
+/*	ALG  FL  OP
+	  4,  6, 15
+}
+
+/*	GyuBass	*/
+@009 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 16, 18,  0,  0,  2, 19,  0,  1,  3,  0,  0,
+	 17, 12,  0,  5,  2, 18,  0,  2,  6,  0,  0,
+	 31, 18,  0,  7,  3, 25,  0,  1,  2,  0,  0,
+	 17,  0,  0,  5,  0,  0,  0,  3,  7,  0,  0,
+/*	ALG  FL  OP
+	  3,  7, 15
+}
+
+/*Piano
+ @009 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 29,  4,  0,  4,  2, 35,  0,  1,  7,  0,  0,
+	 31, 12,  8,  5,  1, 30,  0, 11,  7,  0,  0,
+	 31,  8,  4,  5,  3, 35,  0,  1,  3,  0,  0,
+	 28,  8,  0,  5,  1,  1,  0,  1,  7,  0,  0,
+/*	ALG  FL  OP
+	  2,  7, 15
+}
+
+/*Piano
+ @009 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 29,  4,  0,  4,  2, 35,  2,  1,  7,  0,  0,
+	 31,  9,  1,  5,  2, 45,  1, 10,  7,  0,  0,
+	 28,  4,  3,  5,  2, 35,  2,  1,  3,  0,  0,
+	 28,  8,  0,  5, 11,  1,  1,  1,  7,  0,  0,
+/*	ALG  FL  OP
+	  2,  7, 15
+}
+
+ NM AG FB    Synth 2
+ @09 = {
+*   AR DR SR RR SL  TL KS ML DT AMS
+    31,15, 0, 0, 1, 26, 0, 1, 0,0 0,
+    31, 0, 0, 5, 0, 24, 0, 0, 0,0 0,
+    31,14, 0, 0, 2, 28, 0, 1, 0,0 0,
+    24, 0, 0, 5, 0,  0, 0, 0, 0,0 0,
+     2, 7,15}
+
+@009 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 16, 18,  0,  0,  2, 19,  0,  1,  3,  0,  0,
+	 17, 12,  0,  5,  2, 18,  0,  2,  6,  0,  0,
+	 31, 18,  0,  7,  3, 25,  0,  1,  2,  0,  0,
+	 17,  0,  0,  5,  0,  0,  0,  3,  7,  0,  0,
+/*	ALG  FL  OP
+	  3,  7, 15
+}
+@009 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 16, 18,  0,  0,  1, 34,  0,  0,  3,  0,  0,
+	 17, 12,  0,  5,  0, 24,  0,  3,  6,  0,  0,
+	 31, 18,  0,  7,  2, 26,  0, 11,  2,  0,  0,
+	 17,  0,  0,  5,  0,  0,  0,  5,  7,  0,  0,
+/*	ALG  FL  OP
+	  3,  7, 15
+}
+
+
+
+
+
+
+
+/*Bass
+@10 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31, 28,  0,  0, 15, 24,  0,  0,  0,  0,  0,
+	 31, 18, 10,  7,  2,  0,  0,  0,  0,  0,  0,
+	 31, 18, 10,  7,  2,  0,  0,  0,  0,  0,  0,
+	 31, 18, 10,  7,  2,  0,  0,  0,  0,  0,  0,
+/*	ALG  FL  OP
+	  5,  7, 15
+}
+@10 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31, 20, 20,  0,  5,  0,  3,  0,  0,  0,  0,
+	 31, 18,  8,  7,  1,  0,  0,  1,  0,  0,  0,
+	 31, 18,  8,  7,  1,  0,  0,  1,  0,  0,  0,
+	 31, 18,  8,  7,  1,  0,  0,  1,  0,  0,  0,
+/*	ALG  FL  OP
+	  5,  7, 15
+}
+@10 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31, 20, 20,  0,  5,  0,  3,  0,  0,  0,  0,
+	 31,  8,  0,  7,  1,  0,  0,  1,  0,  0,  0,
+	 31,  8,  0,  7,  1,  0,  0,  1,  0,  0,  0,
+	 31,  8,  0,  7,  1,  0,  0,  1,  0,  0,  0,
+/*	ALG  FL  OP
+	  5,  7, 15
+}
+
+
+
+
+
+
+
+/*Snare
+@011 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0,  7,  5,  0, 15,  0,  7,  3,  0,  1,
+	 31, 15, 15,  6,  3,  0,  0,  3,  7,  0,  0,
+	 31,  0,  7,  5,  0,  0,  0,  7,  3,  0,  0,
+	 31,  0, 15,  6,  0, 18,  0,  3,  0,  0,  0,
+/*	ALG  FL  OP
+	  4,  7, 15
+}
+
+@011 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0,  7,  5,  0, 13,  0,  5,  3,  0,  1,
+	 31, 14, 16,  6,  3,  0,  0,  3,  7,  0,  0,
+	 31,  0,  7,  5,  0,  0,  0,  8,  3,  0,  0,
+	 31,  0, 16,  6,  0,  0,  0,  4,  0,  0,  0,
+/*	ALG  FL  OP
+	  4,  0, 15
+}
+@011 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0, 12,  5,  0, 13,  0, 10,  0,  0,  1,
+	 31, 14, 17,  6,  3,  0,  0,  5,  0,  0,  0,
+	 31, 14, 17,  6,  3,  0,  0,  5,  0,  0,  0,
+	 31, 14, 17,  6,  3,  0,  0,  5,  0,  0,  0,
+/*	ALG  FL  OP
+	  5,  7, 15
+}
+
+@011 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 24, 21,  6, 15,  4,  2,  0, 11,  0,  0,  1,
+	 31, 13, 16,  6,  1,  0,  0,  3,  0,  0,  0,
+	 31, 13, 16,  6,  1,  0,  0,  3,  0,  0,  0,
+	 31, 13, 16,  6,  1,  0,  0,  3,  0,  0,  0,
+/*	ALG  FL  OP
+	  5,  7, 15
+}
+
+@011 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 24, 21,  6, 15,  4,  2,  0, 11,  0,  0,  1,
+	 31, 11, 16,  8,  1,  0,  0,  3,  0,  0,  0,
+	 31, 11, 16,  8,  1,  0,  0,  3,  0,  0,  0,
+	 31, 11, 16,  8,  1,  0,  0,  3,  0,  0,  0,
+/*	ALG  FL  OP
+	  5,  7, 15
+}
+
+
+
+
+
+/*Tom
+@012 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0,  7,  5,  0, 15,  0, 07,  3,  0,  1,
+	 31, 15, 13,  6,  3,  0,  0,  3,  7,  0,  0,
+	 31,  0,  7,  5,  0,  0,  0, 07,  3,  0,  1,
+	 31,  0, 13,  6,  0, 18,  0,  3,  0,  0,  0,
+/*	ALG  FL  OP
+	  4,  7, 15
+}
+
+ @012 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0,  7,  5,  0, 15,  0,  7,  3,  0,  1,
+	 31, 15, 13,  6,  3,  0,  0,  3,  7,  0,  0,
+	 31, 15, 13,  6,  3,  0,  0,  3,  3,  0,  0,
+	 31, 15, 13,  6,  3,  0,  0,  3,  0,  0,  0,
+/*	ALG  FL  OP
+	  5,  7, 15
+}
+
+/* Hat Only
+@013 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0,  0, 15,  0,  0,  0, 15,  7,  0,  0,
+	 31, 19, 17, 15,  5,  0,  0, 15,  3,  0,  0,
+	 31,  0,  0,  0,  0,  0,  0, 13,  3,  0,  0,
+	 31, 19, 17, 15,  5,  0,  0, 15,  7,  0,  0,
+/*	ALG  FL  OP
+	  4,  7, 15
+}
+/* Hat Open
+@014 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0,  0,  0,  0,  5,  0, 15,  7,  0,  0,
+	 31, 13,  0, 15,  3,  0,  0, 13,  3,  0,  0,
+	 31,  0,  0,  0,  0,  5,  0, 15,  3,  0,  0,
+	 31, 13,  0, 15,  3,  0,  0, 13,  7,  0,  0,
+/*	ALG  FL  OP
+	  4,  7, 15
+}
+@014 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0,  0,  0,  0,  5,  0, 15,  7,  0,  0,
+	 31, 13,  0, 15,  3,  0,  0, 13,  3,  0,  0,
+	 31,  0,  0,  0,  0,  5,  0, 15,  3,  0,  1,
+	 31, 13,  0, 15,  3,  0,  0, 13,  7,  0,  0,
+/*	ALG  FL  OP
+	  4,  7, 15
+}
+
+/*Cymbal
+@015 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31, 20,  7,  5,  1, 20,  0, 14,  3,  0,  1,
+	 21, 20, 11,  6,  2,  0,  0,  1,  7,  0,  0,
+	 25,  0,  5,  0,  4,  0,  0,  1,  3,  0,  0,
+	 31, 20, 11,  6,  8,  0,  0,  2,  7,  0,  0,
+/*	ALG  FL  OP
+	  4,  5, 15
+}
+
+@015 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31, 10,  7,  5,  1, 13,  0,  2,  3,  0,  1,
+	 21, 10, 11,  6,  2, 13,  0,  3,  7,  0,  0,
+	 25,  0,  6,  0,  0, 28,  0, 12,  3,  0,  0,
+	 31, 10, 11,  6,  8,  0,  0,  0,  7,  0,  0,
+/*	ALG  FL  OP
+	  1,  7, 15
+}
+/*	YmoH.S Cymbal o1g
+@015 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0,  0, 15,  0, 16,  0,  7,  3,  0,  0,
+	 17, 15,  6, 15,  1, 14,  0,  0,  0,  0,  0,
+	 31,  0,  6, 15,  0,  9,  0,  8,  7,  0,  0,
+	 26, 12, 12, 15,  1,  5,  0,  2,  0,  0,  0,
+/*	ALG  FL  OP
+	  3,  0, 15
+}
+
+/* Hat Open
+@015 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0,  0,  0,  0,  5,  0, 15,  7,  0,  0,
+	 31, 12, 12, 15,  1,  0,  0, 13,  3,  0,  0,
+	 31,  0,  0,  0,  0,  5,  0, 15,  3,  0,  1,
+	 31, 12, 12, 15,  1,  8,  0, 13,  7,  0,  0,
+/*	ALG  FL  OP
+	  4,  7, 15
+}
+
+/* Cymbal
+@015 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 31,  0,  0,  0,  0,  0,  0, 15,  1,  0,  1,
+	 21, 12, 12, 15,  1,  0,  0, 13,  5,  0,  0,
+	 31,  0,  0,  0,  0,  2,  0, 15,  3,  0,  1,
+	 31, 12, 12, 15,  1,  4,  0, 11,  7,  0,  0,
+/*	ALG  FL  OP
+	  4,  6, 15
+}
+
+
+
+/* Scratch
+@016 = {
+/*	 AR  DR  SR  RR  SL  TL  KS MUL DT1 DT2 AME
+	 11,  0,  0, 15,  0, 15,  0, 15,  0,  0,  1,
+	 31,  0,  0, 15,  0,  0,  0,  0,  0,  0,  0,
+	 11,  0,  0, 15,  0, 15,  0, 15,  0,  0,  1,
+	 31,  0,  0, 15,  0,  0,  0,  0,  0,  0,  0,
+/*	ALG  FL  OP
+	  4,  0, 15
+}
+
+
+
+
+
+
+
+/*	+0
+@ 40 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  2,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  4,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  2,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  4,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+
+
+/*	+2	*/
+@ 42 = {
+/*  AR  DR  SR  15  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  8,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  8,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  9,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  9,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+/*	+3TR-4	*/
+@ 43 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  5,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  5,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  6,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  6,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+
+/*	+4	*/
+@ 44 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  4,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  4,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  5,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  5,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+
+/*	+5	*/
+@ 45 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  3,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  3,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  4,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  4,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+
+/*	+7TR+5	*/
+@ 47 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  6,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  6,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  9,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  9,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+
+/*	+10TR-4	*/
+@ 50 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  5,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  5,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  9,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  9,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+
+
+
+
+
+
+
+
+/*	+0
+@ 60 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  2,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  4,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  2,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  4,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+
+
+/*	+2	*/
+@ 62 = {
+/*  AR  DR  SR  15  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  8,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  8,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  9,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  9,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+/*	+3TR-4	*/
+@ 63 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  5,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  5,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  6,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  6,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+
+/*	+4	*/
+@ 64 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  4,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  4,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  5,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  5,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+
+/*	+5	*/
+@ 65 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  3,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  3,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  4,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  4,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+
+/*	+7TR+5	*/
+@ 67 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  6,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  6,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  9,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  9,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+
+/*	+10TR-4	*/
+@ 70 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     8,  4,  0, 15,  1, 16,  0,  5,  3,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  5,  7,  0,  0,
+     8,  4,  0, 15,  1, 16,  0,  9,  7,  0,  0,
+    21,  0,  3, 15,  0,  0,  0,  9,  3,  0,  0,
+/*  CON FL  OP
+     4,  7, 15
+}
+
+
+
+
+
+
+
+/*	+0
+@ 80 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+    18, 16,  8, 15,  1, 10,  0,  4,  1,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  4,  5,  0,  0,
+    18, 16,  8, 15,  1, 10,  0,  4,  7,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  4,  3,  0,  0,
+/*  CON FL  OP
+     4,  3, 15
+}
+
+
+/*	+2	*/
+@ 82 = {
+/*  AR  DR  SR  15  SL  OL  KS  ML DT1 DT2 AME
+    18, 16,  8, 15,  1, 10,  0,  8,  1,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  8,  5,  0,  0,
+    18, 16,  8, 15,  1, 10,  0,  9,  7,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  9,  3,  0,  0,
+/*  CON FL  OP
+     4,  3, 15
+}
+
+/*	+3TR-4	*/
+@ 83 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+    18, 16,  8, 15,  1, 10,  0,  5,  1,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  5,  5,  0,  0,
+    18, 16,  8, 15,  1, 10,  0,  6,  7,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  6,  3,  0,  0,
+/*  CON FL  OP
+     4,  3, 15
+}
+
+/*	+4	*/
+@ 84 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+    18, 16,  8, 15,  1, 10,  0,  4,  1,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  4,  5,  0,  0,
+    18, 16,  8, 15,  1, 10,  0,  5,  7,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  5,  3,  0,  0,
+/*  CON FL  OP
+     4,  3, 15
+}
+
+/*	+5	*/
+@ 85 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+    18, 16,  8, 15,  1, 10,  0,  3,  1,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  3,  5,  0,  0,
+    18, 16,  8, 15,  1, 10,  0,  4,  7,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  4,  3,  0,  0,
+/*  CON FL  OP
+     4,  3, 15
+}
+
+/*	+7TR+5	*/
+@ 87 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+    18, 16,  8, 15,  1, 10,  0,  6,  1,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  6,  5,  0,  0,
+    18, 16,  8, 15,  1, 10,  0,  9,  7,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  9,  3,  0,  0,
+/*  CON FL  OP
+     4,  3, 15
+}
+
+/*	+10TR-4	*/
+@ 90 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+    18, 16,  8, 15,  1, 10,  0,  5,  1,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  5,  5,  0,  0,
+    18, 16,  8, 15,  1, 10,  0,  9,  7,  0,  0,
+    21,  0,  1, 15,  0,  0,  0,  9,  3,  0,  0,
+/*  CON FL  OP
+     4,  3, 15
+}
+
+
+
+
+/*	+0
+@100 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     9, 10,  8,  5,  1, 14,  0,  4,  1,  0,  1,
+    11,  0,  1,  5,  0,  0,  0,  4,  5,  0,  0,
+     9, 10,  8,  5,  1, 14,  0,  4,  7,  0,  1,
+    11,  0,  1,  5,  0,  0,  0,  4,  3,  0,  0,
+/*  CON FL  OP
+     4,  0, 15
+}
+
+/*	+2
+@102 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     9, 10,  8,  5,  1, 14,  0,  8,  1,  0,  1,
+    11,  0,  1,  5,  0,  0,  0,  8,  5,  0,  0,
+     9, 10,  8,  5,  1, 14,  0,  9,  7,  0,  1,
+    11,  0,  1,  5,  0,  0,  0,  9,  3,  0,  0,
+/*  CON FL  OP
+     4,  0, 15
+}
+/*	+3TR-4	*/
+@103 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     9, 10,  8,  5,  1, 14,  0,  5,  1,  0,  1,
+    11,  0,  1,  5,  0,  0,  0,  5,  5,  0,  0,
+     9, 10,  8,  5,  1, 14,  0,  6,  7,  0,  1,
+    11,  0,  1,  5,  0,  0,  0,  6,  3,  0,  0,
+/*  CON FL  OP
+     4,  3, 15
+}
+
+
+/*	+4	*/
+@104 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     9, 10,  8,  5,  1, 14,  0,  4,  1,  0,  0,
+    11,  0,  1,  5,  0,  0,  0,  4,  5,  0,  0,
+     9, 10,  8,  5,  1, 14,  0,  5,  7,  0,  0,
+    11,  0,  1,  5,  0,  0,  0,  5,  3,  0,  0,
+/*  CON FL  OP
+     4,  0, 15
+}
+
+/*	+5	*/
+@105 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     9, 10,  8,  5,  1, 14,  0,  3,  1,  0,  0,
+    11,  0,  1,  5,  0,  0,  0,  3,  5,  0,  0,
+     9, 10,  8,  5,  1, 14,  0,  4,  7,  0,  0,
+    11,  0,  1,  5,  0,  0,  0,  4,  3,  0,  0,
+/*  CON FL  OP
+     4,  0, 15
+}
+
+/*	+7TR+5	*/
+@107 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+     9, 10,  8,  5,  1, 14,  0,  6,  1,  0,  0,
+    11,  0,  1,  5,  0,  0,  0,  6,  5,  0,  0,
+     9, 10,  8,  5,  1, 14,  0,  9,  7,  0,  0,
+    11,  0,  1,  5,  0,  0,  0,  9,  3,  0,  0,
+/*  CON FL  OP
+     4,  0, 15
+}
+
+
+
+
+
+
+/*	+0
+@120 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+    31,  0,  8,  0,  1,  7,  0,  4,  1,  0,  0,
+    11,  0,  1,  4,  0,  0,  0,  4,  5,  0,  0,
+    31,  0,  8,  0,  1,  7,  0,  4,  7,  0,  0,
+    11,  0,  1,  4,  0,  0,  0,  4,  3,  0,  0,
+/*  CON FL  OP
+     4,  0, 15
+}
+
+/*	+4	*/
+@124 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+    31,  0,  8,  0,  1,  7,  0,  4,  1,  0,  0,
+    11,  0,  1,  4,  0,  0,  0,  4,  5,  0,  0,
+    31,  0,  8,  0,  1,  7,  0,  5,  7,  0,  0,
+    11,  0,  1,  4,  0,  0,  0,  5,  3,  0,  0,
+/*  CON FL  OP
+     4,  0, 15
+}
+
+/*	+5	*/
+@125 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+    31,  0,  8,  0,  1,  7,  0,  3,  1,  0,  0,
+    11,  0,  1,  4,  0,  0,  0,  3,  5,  0,  0,
+    31,  0,  8,  0,  1,  7,  0,  4,  7,  0,  0,
+    11,  0,  1,  4,  0,  0,  0,  4,  3,  0,  0,
+/*  CON FL  OP
+     4,  0, 15
+}
+
+/*	+7TR+5	*/
+@127 = {
+/*  AR  DR  SR  RR  SL  OL  KS  ML DT1 DT2 AME
+    31,  0,  8,  0,  1,  7,  0,  6,  1,  0,  0,
+    11,  0,  1,  4,  0,  0,  0,  6,  5,  0,  0,
+    31,  0,  8,  0,  1,  7,  0,  9,  7,  0,  0,
+    11,  0,  1,  4,  0,  0,  0,  9,  3,  0,  0,
+/*  CON FL  OP
+     4,  0, 15
+}
+
+
+
+
+@@10 = "@v110o2MH3,255,127,04,7,3,1p3MD12MPONq8TR+00"Bass
+@@11 = "@v114o2MH3,255,127,04,7,3,1p3    MPOFq8TR+00"Snare
+@@12 = "@v127o1MH3,255,127,04,7,3,1p3    MPONq8TR+00"Tom
+@@13 = "@v110o1MH3,255,127,04,0,2,1p3    MPONq8TR+00"HatClose
+@@14 = "@v110o1MH3,255,127,04,0,2,1p3    MPONq8TR+03"HatOpen
+@@15 = "@v127o1MH3,255,127,04,0,2,1p3    MPOFq8TR-06"Cymbal 
+
+@@42 = "TR-12"
+@@43 = "TR-4"
+@@44 = "TR+0"
+@@45 = "TR+5"
+@@47 = "TR-7"
+@@50 = "TR-4"
+
+@@62 = "TR-12"
+@@63 = "TR-4"
+@@64 = "TR+0"
+@@65 = "TR+5"
+@@67 = "TR-7"
+@@70 = "TR-4"
+
+
+@@82 = "TR-12"
+@@83 = "TR-4"
+@@84 = "TR+0"
+@@85 = "TR+5"
+@@87 = "TR-7"
+@@90 = "TR-4"
+
+@@102 = "TR-12"
+@@103 = "TR-4"
+@@104 = "TR+0"
+@@105 = "TR+5"
+@@107 = "TR-7"
+@@110 = "TR-4"
+
+@@122 = "TR-12"
+@@123 = "TR-4"
+@@124 = "TR+0"
+@@125 = "TR+5"
+@@127 = "TR-7"
+@@130 = "TR-4"
+
+
+A	@t222
+
+ ABC	!
+
+#tps -8
+ #tps -4
+ #tps -5
+ #tps -6
+
+ 
+ABCDEFG	$SHARP{fgc}
+
+ BCDFGH !
+ABCDEFGH	VO10
+ 
+#reste 1
+#cont 1
+@w0 = { 1,0, 1,2}
+
+AE	o5@00@v108l16q7
+AE	MP2,4,32MD40
+E	(8
+ E	AP0,1,2
+ E	r%1r4D8
+E	r%1r8D8
+
+ AE	?
+
+AE	[r1]13
+AE	rr2.c>c<a
+
+AE	L
+E	AP0,96,0
+
+AE	f2..e8         f4.e8f8.g8.a8      g_a&a8f8.d8&d2&   d2..f8
+AE	f8.e8.g8&g4.f8 f"8.c8.>c8&c4<g8b8 a1                r&r2.>c<bg
+
+AE	f2..e8         f4.e8f8.g8.a8      a_b&b8>c8.<d8&d2& d2..f8
+AE	f8.e8.g8&g4.f8 f"8.c8r>c4<b8g8b8  f1&               f1
+
+ AE	?
+
+AE	f8&f2f8g8a8 g8.e8.c8&c4<b4 >c1 r1
+AE	f8&f2f8g8a8 g8.e8.c8&c4b4   a1 r1
+
+AE	f8&f2f8g8a8 g8.e8.c8&c4<b4 >c1 r1
+AE	d8&d2d8f8a8 g8.e8.c8&c4b4   a+1 r2.
+
+AE	c4
+
+ AE	?
+
+AE	>c8.c8.c8c8.d8.c8 <b2..ga b8.b8.b8b8.>c8.<b8 a+4.f4.e4
+AE	d8.f8.b_>c&c&c2< d+8.f8.>c8<b_>c&c8.<d+4 e2..ef g2.&g
+
+AE	age
+
+ AE	?
+
+AE	f1& f4frg8a8.b8.>c8 d+8<bf&f2.& f&f2.cae
+AE	f1& f4frg8a8.b8.>c8 e_f8d+<b&b2&b8d+>c< b2.
+
+ AE	?
+
+AE	o6@02@v112l16@q2
+E	(4
+AE	c4
+AE	>c1 <b2e8.>e8.<b8 b2..a+g a+2.frgr
+AE	a8&a2a8b8>c8  <brg4e4.b4 b_>c1& c1& c1& c&c2.
+
+AE	o5@00@v108l16q7
+E	(8
+AE	c>c<a
+
+ 
+
+B	[r1]8
+
+B	o3l16@04@v112@q2
+B	g8_a1 g2a4g4
+
+B	o3l16@04@v112@q2
+B	[c8]24
+B	c8c8>c8<c>c8<ccc>c<c>c<c
+
+B	L
+
+B	[
+B		[f8ff8ff4c8e8c8]
+B		[d8dd8dd4<a8>d8<a8>]
+B		e8ee8ee4<b8>d8<b8> f"8f"f"8f"f"4c8e8c8
+B		f8ff8ff4c8e8c8
+B		/
+B		d8dd8d<a8>cc>c8<b8g8
+B	]
+B		f8ff8ff4r4.
+
+ B	?
+
+B	f8.rf8.f&f8ff8fff e8.re8.e&e8ee8eee d8.rd8.d&d8dd8ddd e8.re8.e&e8ee8eee
+B	f8.rf8.f&f8ff8fff e8.re8.e&e8ee8eee a8.ra8.a&a8aa8aaa g8.rg8.c&c8ee8eee
+
+B	f8.rf8.f&f8ff8fff e8.re8.e&e8ee8eee d8.rd8.d&d8dd8ddd e8.re8.e&e8ee8eee
+B	d8.rd8.d&d8dd8ddd e8.re8.e&e8ee8eee f8.rf8.f&f8ff8fff f8.rf8.f&f8cce8c8
+
+ B	?
+B	d8.rd8.d&d8dd8ddd e8.re8.e&e8ee8eee c8.rc8.c&c8cc8ccc f8.rf8.f&f8ee8eee
+B	d8.rd8.d&d8dd8ddd d+8.rd+8.d+&d+8d+d+8d+d+d+ e8.re8.e&e8ee8eee c8.rc8.ccc>c8<b8g8
+
+ B	?
+B	[f8cf8cfccrc8e8c8] [b8ab8d+ed+d+rd+8f8d+8]
+B	[f8cf8cfccrc8e8c8]  b8ab8d+ed+d+rd+8f8d+8  b8ab8d+ed+>c8<b>c8<b>c<b
+
+ B	?
+B	d4r8d4d8d8d8 e4r8e4e8e8e8 c4r8c4c8c8c8 f4r8f4f8e8e8
+B	d4r8d4d8d8d8 e4r8e4e8e8e8 f8.rf8.f&f8ff8fff f8.rf8.f&f8ff8fff f8.rf8.f&f8ff8fff f8.rf8.f&f8ff8fff
+
+ 
+CD	o2@v100@q1l1
+C	r%1
+D	r%2
+
+CD	[r1]4
+
+	cefa  efgb  egbc
+C	@103c @102e @104e& e
+D	@103f @103g @102b& b
+
+	cefa  efgb  fgbc 
+C	@103c @102e @102f& f
+D	@103f @103g @102b& b
+
+	f"gbc
+C	@103f"& f"
+D	@102b&  b
+
+CD	L
+
+CD	o3@v105
+C	p3
+D	p3
+
+	cefa  cefb  defa defb
+C	@103c& c  @104d& d
+D	@103f& f  @105e& e
+
+	defa  cf"gb cfab  dfab   cf"gb
+C	@104d @104c @105c& c
+D	@105e @103g @102a& a
+
+	cefa  cefb  defa  defb
+C	@103c& c    @104d& d
+D	@103f& f    @105e& e
+
+	defa  defb    cf"gb     cfab   efab
+C	@104d @104d4. @104c8&c2 @105c  @102e1
+D	@105e @107e4. @103g8&g2 @102a  @102a1
+
+ CD	?
+
+CD	q8o2@v104
+C	p1
+D	p2
+
+	cefa  efgb  fgac  abce
+C	@103c& c c& c
+D	@103f& f f& f
+
+	cefa  efgb  fgac  cf"gb
+C	@103c& c @103f& f
+D	@103f& f @105g& g
+
+	cefa  efgb  fgac  abce
+C	@103c& c c& c
+D	@103f& f f& f
+
+	dfab  efgb  fga+c
+C	@104d& d @104f& f
+D	@102a& a @105g& g
+
+ CD	?
+
+CD	q8o2@v104
+
+	defa  efgb  cegb  cefa+
+C	@104d @104e @103c @103c
+D	@105f @105b @103g @104f
+
+	defa  d+fab  efgb  f"gbc
+C	@102d @103d+ @102e @103f"
+D	@103f @102a  @103g @102b
+
+CD	MP2,4,48MD48
+
+ CD	!
+
+CD	o3
+
+	 acef    bceg    bcd+f  fbcd+
+C	<@104a> <@102b> <@102b> @105<f>
+D	 @102e   @104e   @103d+ @102c
+
+	 acef    bceg    bcd+f  fbcd+ cd+fb
+C	<@104a> <@102b> <@102b> @105<f2>@102c2
+D	 @102e   @104e   @103d+ @102c2  @105f2
+
+
+ CD	?
+
+CD	MPOF
+CD	q8o2@v106
+
+	dfac  egbc  cegb  cefa+
+C	@104d @104e @103c @103c
+D	@104a @102b @103g @104f
+
+	dfac  egbc  cefb  cegb  <a+>cfa+
+C	@104d @104e @103c @103c @103<a+& a+
+D	@104a @102b @105f @103g @104f&   f
+	<a>cfa
+ B	f8f8>f8<f>f8f<c8b8>c8
+
+ 
+
+ F	!
+
+ @w0 = {1,0, 0,-6,-8}
+@w0 = {1,0, 0,-8,-10}
+@w1 = {1,0, 3,1,2,3,2,1}
+
+F	o6l1@01@v105l48q8
+F	VM0,1,2
+F	AP1,1,2
+
+F	o7
+F	r1
+
+F	r1
+
+F	V-31
+F		e	e	g
+F	V1	f	e	e
+F	V1	<b>	f	e
+F	V1	c	<b>	f
+F	V1	c	c	<b>
+F	V1	e	c	c
+F	V1	<a>	e	c
+F	V1	<b>	<a>	e
+F	V1	<b>	<b>	<a>
+F	V1 	c	<b>	<b>
+F	V1	e	c	<b>
+F	V1	f	e	c
+F	V1	f	f	e
+F	V1	c	f	f
+F	V1	g	c	f
+F	V1	e	g	c
+
+F	V1	e	e	g
+F	V1	f	e	e
+F	V1	<b>	f	e
+F	V1	c	<b>	f
+F	V1	c	c	<b>
+F	V1	e	c	c
+F	V1	<a>	e	c
+F	V1	<b>	<a>	e
+F	V1	<b>	<b>	<a>
+F	V1	c	<b>	<b>
+F	V1	e	c	<b>
+F	V1	f	e	c
+F	V1	f	f	e
+F	V1	c	f	f
+F	V1	g	c	f
+F	V1	e	g	c
+
+ F		e	e	g
+ F	V1	f	e	e
+ F		<b>	f	e
+ F	V1	c	<b>	f
+ F		c	c	<b>
+ F	V1	e	c	c
+ F		<a>	e	c
+ F	V1	<b>	<a>	e
+ F		<b>	<b>	<a>
+ F	V1	c	<b>	<b>
+ F		e	c	<b>
+ F	V1	f	e	c
+ F		f	f	e
+ F	V1	c	f	f
+ F		g	c	f
+ F	V1	e	g	c
+
+ F		e	e	g
+ F	V1	f	e	e
+ F		<b>	f	e
+ F	V1	c	<b>	f
+ F		c	c	<b>
+ F	V1	e	c	c
+ F		<a>	e	c
+ F	V1	<b>	<a>	e
+ F		<b>	<b>	<a>
+ F	V1	c	<b>	<b>
+ F		e	c	<b>
+ F	V1	f	e	c
+ F		f	f	e
+ F	V1	c	f	f
+ F		g	c	f
+ F	V1	e	g	c
+
+F	[
+F		e	e	g
+F		f	e	e
+F		<b>	f	e
+F		c	<b>	f
+F		c	c	<b>
+F		e	c	c
+F		<a>	e	c
+F		<b>	<a>	e
+F		<b>	<b>	<a>
+F		c	<b>	<b>
+F		e	c	<b>
+F		f	e	c
+F		f	f	e
+F		c	f	f
+F		g	c	f
+F		e	g	c
+F	]10
+
+ F	!
+F	L
+
+F	o6l1@01@v105l48q8
+F	o6
+	cefa  cefb  defa defb
+	defa  cf"gb cfab  dfab   cf"gb
+F	[
+F		f	b	a
+F		c	f	b
+F		e	c	f
+F		f	e	c
+F		c	f	e
+F		e	c	f
+F		f	e	c
+F		a	f	e
+
+F		>c<	a	f
+F		a	>c<	a
+F		f	a	>c<
+F		a	f	a
+F		f	a	f
+F		c	f	a
+F		<b>	c	f
+F		c	<b>	c
+
+F		f	c	<b>
+F		c	f	c
+F		e	c	f
+F		f	e	c
+F		c	f	e
+F		e	c	f
+F		f	e	c
+F		a	f	e
+
+F		>c<	a	f
+F		a	>c<	a
+F		f	a	>c<
+F		a	f	a
+F		f	a	f
+F		c	f	a
+F		<b>	c	f
+F		c	<b>	c
+
+F		f	c	<b>
+F		d	f	c
+F		e	d	f
+F		f	e	d
+F		d	f	e
+F		e	d	f
+F		f	e	d
+F		a	f	e
+
+F		>d<	a	f
+F		a	>d<	a
+F		f	a	>d<
+F		a	f	a
+F		f	a	f
+F		d	f	a
+F		c	d	f
+F		d	c	d
+
+F		f	d	c
+F		d	f	d
+F		e	d	f
+F		f	e	d
+F		d	f	e
+F		e	d	f
+F		f	e	d
+F		a	f	e
+F		>d<	a	f
+F		a	>d<	a
+F		f	a	>d<
+F		a	f	a
+F		f	a	f
+F		d	f	a
+F		c	d	f
+F		d	c	d
+
+F		f	d	c
+F		d	f	d
+F		e	d	f
+F		f	e	d
+F		d	f	e
+F		e	d	f
+F		f	e	d
+F		a	f	e
+
+F		>d<	a	f
+F		a	>d<	a
+F		f	a	>d<
+F		a	f	a
+F		f	a	f
+F		d	f	a
+F		c	d	f
+F		d	c	d
+
+F		g	d	c
+F		c	g	d
+F		f"	c	g
+F		g	f"	c
+F		c	g	f"
+F		f"	c	g
+F		g	f"	c
+F		b	g	f"
+
+F		>c<	b	g
+F		b	>c<	b
+F		g	b	>c<
+F		b	g	b
+F		g	b	g
+F		f"	g	b
+F		<b>	f"	g
+F		c	<b>	f"
+
+F		a	c	<b>
+F		f	a	c
+F		c	f	a
+F		a	c	f
+F		f	a	c
+F		c	f	a
+F		a	c	f
+F		>c<	a	c
+
+F		>f<	>c<	a
+F		>c<	>f<	>c<
+F		a	>c<	>f<
+F		>c<	a	>c<
+F		a	>c<	a
+F		f	a	>c<
+F		e	f	a
+F		f	e	f
+F	/
+F		a	f	e
+F		d	a	f
+F		f	d	a
+F		a	f	d
+F		d	a	f
+F		f	d	a
+F		a	f	d
+F		>d<	a	f
+
+F		>c<	>d<	a
+F		b	>c<	>d<
+F		a	b	>c<
+F		>e<	a	b
+F		>c<	>e<	a
+F		b	>c<	>e<
+F		a	b	>c<
+F		b	a	b
+F	]
+F		a	f	f
+F		f	a	f
+F		c	f	a
+F		a	c	f
+F		f	a	c
+F		c	f	a
+F		a	c	f
+F		>c<	a	c
+
+F		f	>c<	a
+F		c	f	>c<
+F		a	c	f
+F		f	a	c
+F		>c<	f	a
+F		a	>c<	f
+F		f	a	>c<
+F		a	f	a
+
+
+F	o7
+F	[
+F		<f>	<b>	c
+F		c	<f>	<b>
+F		e	c	<f>
+F		f	e	c
+F		<b>	f	e
+F		c	<b>	f
+F		e	c	<b>
+F		f	e	c
+F		<f>	f	e
+F		c	<f>	f
+F		e	c	<f>
+F		f	e	c
+F		<b>	f	e
+F		c	<b>	f
+F		e	c	<b>
+F		f	e	c
+
+F		<f>	f	e
+F		c	<f>	f
+F		e	c	<f>
+F		f	e	c
+F		<b>	f	e
+F		c	<b>	f
+F		e	c	<b>
+F		f	e	c
+F		<f>	f	e
+F		c	<f>	f
+F		e	c	<f>
+F		f	e	c
+F		<b>	f	e
+F		e	<b>	f
+F		c	e	<b>
+F		<b>	c	e
+F	]8
+
+F	@v107
+F	o6
+F	dddeeefffaaafffaaa>dddeee		dddeeefffaaafffaaa>dddeee<
+F	o6
+F	eeefffgggbbbgggbbb>eeefff		eeefffgggbbbgggbbb>eeefff<
+F	o6
+F	ccceeegggbbbgggbbb>ccceee		ccceeegggbbbgggbbb>ccceee<
+F	o6
+F	ccceeefffa+a+a+fffa+a+a+>ccceee		ccceeefffa+a+a+fffa+a+a+>ccceee<
+F	o6
+F	dddeeefffaaafffaaa>dddeee		dddeeefffaaafffaaa>dddeee<
+F	o6
+F	d+d+d+fffaaabbbaaabbb>d+d+d+fff		d+d+d+fffaaabbbaaabbb>d+d+d+fff<
+F	o6
+F	eeefffgggbbbgggbbb>eeefff		eeefffgggbbbgggbbb>eeefff<
+F	o6
+F	f"f"f"gggbbb>ccc<bbb>cccf"f"f"ggg	f"f"f"gggbbb>ccc<bbb>cccf"f"f"ggg
+
+F	@v105
+F	o7
+F	[
+F		`f`  `<g` `c`  
+F		`<b` `f`  `<g` 
+F		`c`  `<b` `f`  
+F		`e`  `c`  `<b` 
+F		`f`  `e`  `c`  
+F		`a`  `f`  `e`  
+F		`g`  `a`  `f`  
+F		`e`  `g`  `a`  
+F		`f`  `e`  `g`  
+F		`d+` `f`  `e`  
+F		`e`  `d+` `f`  
+F		`c`  `e`  `d+` 
+F		`d+` `c`  `e`  
+F		`<b` `d+` `c`  
+F		`c`  `<b` `d+` 
+F		`<g` `c`  `<b` 
+F	]8
+
+F	o5@08@v108l08q7
+F	VMOF
+F	APOF
+F	p1
+ F	dfa>c<a>ceg bgege<bge cegceab>e fc<a+>c<a+fc<a+>
+ F	dfafa>c<a>f ge<b>e<bge<b
+F	dfa>c<a>ceg bgege6<b6g6 cegceab>e fc<a+>c<a+6f6c6
+F	dfafa>c<a>f ge<b>e<b6g6e6
+
+F	p3
+F	q8o2@v106
+F	@103c1 @103c1 @103<a+1& a+1
+
+ 
+G	o7@00@v096l48q1
+@w0 = {1,0, 0,-12,-16}
+
+G	VM0,1,2
+G	[
+G		f	a	>c<
+G		e	f	a
+G		f	e	f
+G		g	f	e
+G		a	g	f
+G		g	a	g
+G		a	g	a
+G		b	a	g
+G		>c<	b	a
+G		b	>c<	b
+G		>c<	b	>c<
+G		>e<	>c<	b
+G		>f<	>e<	>c<
+G		>e<	>f<	>e<
+G		>c<	>e<	>f<
+G		a	>c<	>e<
+G	]14
+G	VMOF
+G	K
+
+G	L
+
+G	o5@00@v105l16q7
+G	MP2,4,32MD40
+
+G	[r1]4
+
+ G	?
+G	[r1]3
+G	rr2.>ge<b
+
+G	>c2..<b8 >c4.<b8>c8.e8.f8 c_d&d8a8.b8&b2&  b1
+
+G	d8.<b8.>e8&e2  c8.<b8r>a4g8e8g8  a1&       a1<
+
+ G	?
+
+G	[r1]4
+G	[r1]4
+
+G	>c8&c2c8e8f8 e8.c8.<b8&b4>e4 <aga2>(4c8<b8a8 g8&a8g8e8&e2)4
+G	a8&a2a8b8>c8  e8.c8.<b8&b4>e4 c_c"&c"_c2...  r1
+
+ G	?
+
+G	o6
+
+G	r1           b8.b8.b8b8.>e8.<b8 g1     a+8.a+8.a+8a+8.f8.c8
+G	r2d8.f8.>c8& c2<d+8.f8.>c8<     g2..ga b1
+
+ G	?
+
+G	r4frfre8.fr4 frfrf8efr2 r4ararg8.ar4 arara8gar2
+G	r4frfre8.fr4 frfrf8efr2 r4ararg8.ar4 >crcrc8<b>cr2
+
+ G	?
+
+G	@08@v108p2
+G	l8o4
+G	dfa>c<a>ceg bgege6<b6g6 cegceab>e fc<a+>c<a+6f6c6
+G	dfafa>c<a>f ge<b>e<b6g6e6
+G	p3
+
+G	MPOF
+G	q8o2@v106
+G	@105f1 @103g1 @104f1&   f1
+
+ 
+#tps 0
+
+H	l16
+H	MP2,192,-18432
+
+H	[r1]9
+
+H	r2.e4
+
+ H	@10e4e4e4e8@11e8 @10e4e4e8.e@11e@10e@11e8
+H	@10e4e4e4@11e4 @10e4e4e8.e@11e8@10e8
+H	@10e4e4e4@11e4
+H	@10e8@11e8e8@10e@11e @10e@11ee8e@12p1gp3ep2cp3
+
+H	L
+
+H	[
+H		[@10e4e4 e4@11e8@10e8]4
+
+H		[@10e4e4 e4@11e8@10e8]3
+H		/
+H		 @10e4e4 e8@11e8e8@10e@11e
+H	]
+ H		 @10e4e4 e@11ee8e@10e@11e8
+H		 @10e4e4 e@11ee@10e@11ee@10e@11e
+
+
+H	[
+H		[@10e4e8.e e8e8@11e8@10e8]4
+
+H		[@10e4e8.e e8e8@11e8@10e8]3
+H		/
+H		 @10e4e8.e e8@11e8e8@10e@11e
+H	]
+H		 @10e4e8.e e@11ee8e8ee
+
+H	[@10e4.e4e8 @11e8@10e8]4
+H	[@10e4.e4e8 @11e8@10e8]3 @10e8@11e8e8@10e8 e@11ee@10e@11eeee
+
+H	[
+H		@10e4@11e8.@10e @10e8e8@11e8@10e8
+H		@10e4@11e8.@10e @10e8e8@11e8@10e8
+H		@10e4@11e8.@10e @10e8e8@11e8@10e8
+H		@10e4@11e8.@10e / @10e8e8@11ee@10e8
+H	]	                  @10e8@11e8e@10e@11ee
+
+ H	?
+
+H	[@10e4.e4e8 @11e8@10e8]4
+H	[@10e4.e4e8 @11e8@10e8]
+H	[@10e4e4/e4e4]4 e@11ee@10e@11e8@10e@11e
+
+ 
+
